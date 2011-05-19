@@ -1,6 +1,6 @@
 SHELL := /bin/bash
 
-all: link submodules
+all: submodules link
 
 link: .vim .vimrc
 	@for targ in $^; do \
@@ -11,3 +11,10 @@ link: .vim .vimrc
 submodules:
 	git submodule init
 	git submodule update
+
+native: CommandT
+
+CommandT: 
+	cd ~/.vim/bundle/Command-T/ruby/command-t && \
+	ruby extconf.rb && \
+	make

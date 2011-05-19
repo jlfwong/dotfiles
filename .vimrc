@@ -10,7 +10,7 @@ filetype off
 " This also includes all of the plugins I use
 "
 " Run :BundleInstall to install all of the plugins
-source ~/.vim/bundle/.vundle
+source ~/.vim/.vundle
 
 set autoread
 set autowrite
