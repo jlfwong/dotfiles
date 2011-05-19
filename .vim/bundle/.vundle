@@ -1,0 +1,21 @@
+" vim: ft=vim
+"
+" Vundle
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+Bundle 'gmarik/vundle'
+
+" Bundles (plugins)
+Bundle 'godlygeek/tabular'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'kevinw/pyflakes-vim'
+Bundle 'mileszs/ack.vim'
+Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/syntastic'
+Bundle 'sjl/gundo.vim'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-rails'
+Bundle 'tsaleh/vim-supertab'
+Bundle 'wincent/command-t'
