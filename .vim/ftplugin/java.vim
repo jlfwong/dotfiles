@@ -1,2 +1,2 @@
-map <buffer> <Leader>c :!clear;javac %
-map <buffer> <Leader>r :!clear;java %:r
+map <buffer> <Leader>c :!javac %
+map <buffer> <Leader>r :!java %:r

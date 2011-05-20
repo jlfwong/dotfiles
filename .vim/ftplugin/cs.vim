@@ -1,2 +1,2 @@
-map <buffer> <Leader>c :!clear;gmcs %
-map <buffer> <Leader>r :!clear;mono %:r.exe
+map <buffer> <Leader>c :!gmcs %
+map <buffer> <Leader>r :!mono %:r.exe
