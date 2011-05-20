@@ -2,7 +2,7 @@ SHELL := /bin/bash
 
 all: submodules link
 
-link: .vim .vimrc
+link: .vim .vimrc .gvimrc
 	@for targ in $^; do \
 		echo Linking $$targ; \
 		ln -s `pwd`/$$targ ~; \
