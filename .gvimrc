@@ -1,1 +1,2 @@
-colorscheme liquidcarbon
+set background=dark
+colorscheme solarized
