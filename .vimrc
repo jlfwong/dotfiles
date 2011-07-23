@@ -18,6 +18,9 @@ set autowrite
 set backspace=2 "Make backspace work as expected on Mac OS X
 set autoindent  "Auto Indent code - This simply retains indentation level
 
+" Showing whitespace
+set list listchars=tab:\ \ ,trail:·
+
 " General indentation settings
 " 
 " Note that these vary from language to language
@@ -79,6 +82,10 @@ nmap <Leader>p :!echo `pwd`/% \| pbcopy<CR><CR>
 
 " Tabularize
 vmap <Leader>t :Tabularize /
+
+" CommandT
+let g:CommandTMaxHeight=5
+set wildignore+=*.o,.git,*.jpg,*.png,*.swp,*.d,*.gif
 
 "OmniCompletion
 set completeopt=longest,menuone

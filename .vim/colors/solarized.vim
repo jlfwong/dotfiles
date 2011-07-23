@@ -666,7 +666,7 @@ exe "hi Todo"           . s:fg_magenta.s:bg_none   .s:fmt_bold
 "
 "Highlighting groups for various occasions
 "-----------------------------------------
-exe "hi SpecialKey"     . s:fg_base02 .s:bg_none   .s:fmt_none
+exe "hi SpecialKey"     . s:fg_base01 .s:bg_base02 .s:fmt_none
 exe "hi NonText"        . s:fg_base02 .s:bg_none   .s:fmt_bold
 exe "hi Directory"      . s:fg_blue   .s:bg_none   .s:fmt_none
 exe "hi ErrorMsg"       . s:fg_red    .s:bg_none   .s:fmt_revr
