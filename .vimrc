@@ -107,7 +107,7 @@ vnoremap <silent> # :<C-U>
   \gV:call setreg('"', old_reg, old_regtype)<CR>
 
 " GUI Options
-if has("gui_running')
+if has("gui_running")
   set guioptions=egt
 endif
 

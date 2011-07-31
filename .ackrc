@@ -1,4 +1,4 @@
 --type-set
 haml=.haml
 --type-set
-cofee=.coffee
+coffee=.coffee
