@@ -87,11 +87,16 @@ vmap <Leader>t :Tabularize /
 let g:CommandTMaxHeight=5
 set wildignore+=*.o,.git,*.jpg,*.png,*.swp,*.d,*.gif
 
-"OmniCompletion
+" OmniCompletion
 set completeopt=longest,menuone
 set omnifunc=syntaxcomplete#Complete
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+
+" SnipMate
+ino <silent> <c-r><tab> <c-r>=TriggerSnippet()<cr>
+snor <silent> <c-r><tab> <esc>i<right><c-r>=TriggerSnippet()<cr>
+ino <silent> <c-r><c-s> <c-r>=ShowAvailableSnips()<cr>
 
 " Search for selected text, forwards or backwards.
 " http://vim.wikia.com/wiki/Search_for_visually_selected_text
