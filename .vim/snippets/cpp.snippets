@@ -1,0 +1,32 @@
+snippet guard
+	#ifndef _${1:`Filename('$1', 'name')`}_
+	#define _$1_
+
+	$2
+
+	#endif
+
+snippet class
+	class ${1:`Filename('$1', 'name')`} {
+	public:
+		$1(${2:});
+		virtual ~$1();
+
+	private:
+		${3:/* data */}
+	};
+
+snippet header_file
+	#ifndef _${1:`Filename('$1', 'name')`}_
+	#define _$1_
+
+	class ${2:`Filename('$1', 'name')`} {
+	public:
+		$2(${3:});
+		virtual ~$2();
+
+	private:
+		${4:/* data */}
+	};
+
+	#endif

@@ -94,6 +94,7 @@ inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 
 " SnipMate
+let g:snippets_dir="~/.vim/snippets/,~/.vim/bundle/snipmate.vim/snippets/"
 ino <silent> <c-r><tab> <c-r>=TriggerSnippet()<cr>
 snor <silent> <c-r><tab> <esc>i<right><c-r>=TriggerSnippet()<cr>
 ino <silent> <c-r><c-s> <c-r>=ShowAvailableSnips()<cr>
