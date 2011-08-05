@@ -30,3 +30,9 @@ snippet header_file
 	};
 
 	#endif
+
+snippet forit
+	${1:vector}<${2:T}>::iterator ${3:it};
+	for ($3 = ${4:obj}.begin(); $3 != $4.end(); ++$3) {
+		$2 ${5:cur} = *($3);
+	}
