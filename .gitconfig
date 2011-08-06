@@ -1,0 +1,24 @@
+[user]
+  name = Jamie Wong
+  email = jamie.lf.wong@gmail.com
+[color]
+  branch = auto
+  diff = auto
+  status = auto
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = green
+[color "status"]
+  added = yellow
+  changed = green
+  untracked = cyan
+[alias]  
+  lg = log --graph --pretty=format:'%Cred%h%Creset - %Cblue%an:%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+  amend = commit --amend
+[core]
+  editor = /usr/bin/vim
+[diff]
+  tool = vimdiff
+[difftool]
+  prompt = false

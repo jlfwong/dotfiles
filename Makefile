@@ -2,11 +2,8 @@ SHELL := /bin/bash
 
 all: submodules link
 
-link: .vim .vimrc .gvimrc .ackrc
-	@for targ in $^; do \
-		echo Linking $$targ; \
-		ln -s `pwd`/$$targ ~; \
-	done
+link: .vim .vimrc .gvimrc .ackrc .gitconfig
+	$(foreach file, $^, ln -s $(CURDIR)/$(file) ~; )
 
 submodules:
 	git submodule init
