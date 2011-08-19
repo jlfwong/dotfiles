@@ -676,7 +676,7 @@ exe "hi MoreMsg"        . s:fg_blue   .s:bg_none   .s:fmt_none
 exe "hi ModeMsg"        . s:fg_blue   .s:bg_none   .s:fmt_none
 exe "hi LineNr"         . s:fg_base01 .s:bg_base02 .s:fmt_none
 exe "hi Question"       . s:fg_cyan   .s:bg_none   .s:fmt_bold
-exe "hi StatusLine"     . s:fg_base0  .s:bg_base02 .s:fmt_none
+exe "hi StatusLine"     . s:fg_green  .s:bg_base02 .s:fmt_none
 exe "hi StatusLineNC"   . s:fg_base1  .s:bg_base02 .s:fmt_none
 exe "hi VertSplit"      . s:fg_base0  .s:bg_base02 .s:fmt_none
 exe "hi Title"          . s:fg_orange .s:bg_none   .s:fmt_bold
