@@ -22,7 +22,7 @@ set autoindent  "Auto Indent code - This simply retains indentation level
 set list listchars=tab:\ \ ,trail:·
 
 " General indentation settings
-" 
+
 " Note that these vary from language to language
 set tabstop=2   "Set space width of tabs
 set softtabstop=2
@@ -34,6 +34,7 @@ set splitbelow
 set number      "Add line numbers
 set ruler       "Display Cursor Position
 set title       "Display filename in titlebar
+set titleold=   "Prevent the "Thanks for flying Vim"
 
 set backupdir=/Users/jlfwong/.vim/backup/,.
 
