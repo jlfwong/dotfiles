@@ -18,6 +18,7 @@
   amend = commit --amend
 [core]
   editor = /usr/bin/vim
+  excludesfile = ~/.gitignore_global
 [diff]
   tool = vimdiff
 [difftool]
