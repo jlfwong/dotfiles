@@ -1,3 +1,3 @@
-setlocal sts=4 sw=4 ts=4
+setlocal sts=2 sw=2 ts=2
 
 map <buffer> <Leader>a :e<C-R>=fnamemodify(expand('%'),':p:r')<CR>.js<CR>

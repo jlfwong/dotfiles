@@ -13,11 +13,12 @@
   added = yellow
   changed = green
   untracked = cyan
-[alias]  
+[alias]
   lg = log --graph --pretty=format:'%Cred%h%Creset - %Cblue%an:%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
   amend = commit --amend
 [core]
   editor = /usr/bin/vim
+  excludesfile = ~/.gitignore_global
 [diff]
   tool = vimdiff
 [difftool]

@@ -330,8 +330,8 @@ if has("gui_running") && w:solarized_degrade == 0
     let s:g_cyan        = "#2aa198"
     let s:g_green       = "#859900"
 else
-    " these colors are for non-gui vim when CSApprox is installed. CSApprox 
-    " degrades the base colors poorly (bright blues instead of muted gray 
+    " these colors are for non-gui vim when CSApprox is installed. CSApprox
+    " degrades the base colors poorly (bright blues instead of muted gray
     " blues) so we set all hex values here to ones which CSApprox will not
     " change and which we approve of. Perhaps I should just can the hex values
     " and use just the color table values, leaving these blank. Not much
