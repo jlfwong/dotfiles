@@ -14,6 +14,7 @@ source ~/.vim/.vundle
 
 set autoread
 set autowrite
+set laststatus=2
 
 set backspace=2 "Make backspace work as expected on Mac OS X
 set autoindent  "Auto Indent code - This simply retains indentation level
@@ -35,6 +36,7 @@ set number      "Add line numbers
 set ruler       "Display Cursor Position
 set title       "Display filename in titlebar
 set titleold=   "Prevent the "Thanks for flying Vim"
+set nohlsearch
 
 set backupdir=/Users/jlfwong/.vim/backup/,.
 
@@ -59,8 +61,15 @@ nnoremap j gj
 nnoremap gk k
 nnoremap gj j
 
+" Git Grep
+nnoremap <Leader>gg :GitGrep<space>
+vnoremap <Leader>gg "gy:GitGrep <C-R>g<CR>
+
 "Map Semicolon to : for faster command execution
 nmap ; :
+
+"Zoom
+nnoremap <Leader>z :ZoomWin<CR>
 
 "] and ^] switch between tabs
 nmap ] :tabNext<CR>
@@ -128,3 +137,5 @@ endif
 "  <Leader>r - Execute
 "
 " See ftplugin/*.vim
+
+autocmd BufNewFile,BufRead *.json set ft=json

@@ -1,4 +1,4 @@
-" vim: ft=vim
+"vim:ft=vim
 "
 " Vundle
 set rtp+=~/.vim/bundle/vundle/
@@ -17,6 +17,7 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'majutsushi/tagbar'
 Bundle 'mileszs/ack.vim'
 Bundle 'phleet/snipmate.vim'
+Bundle 'rphillips/vim-zoomwin'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 Bundle 'sjl/gundo.vim'
