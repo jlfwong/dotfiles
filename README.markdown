@@ -31,9 +31,5 @@ running `make` and run
     
     :BundleInstall
 
-Some of the plugins require native extensions. To install these, run
-
-    make native
-    
 
 [Vundle]: https://github.com/gmarik/vundle

@@ -84,8 +84,11 @@ nmap <Leader>p :!echo `pwd`/% \| pbcopy<CR><CR>
 " Tabularize
 vmap <Leader>t :Tabularize /
 
-" CommandT
-let g:CommandTMaxHeight=5
+" CtrlP
+let g:ctrlp_map = '<Leader>t'
+let g:ctrlp_working_path_mode = 0
+let g:ctrlp_clear_cache_on_exit = 1
+nnoremap <leader>b :CtrlPBuffer<CR>
 set wildignore+=*.o,.git,*.jpg,*.png,*.swp,*.d,*.gif
 
 " OmniCompletion
