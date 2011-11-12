@@ -45,6 +45,11 @@ set ignorecase
 set smartcase
 set wildmenu
 
+" Mark the 81st column
+if exists('+colorcolumn')
+  set colorcolumn=81
+endif
+
 filetype plugin on
 filetype indent off
 
@@ -98,7 +103,7 @@ let g:ctrlp_map = '<Leader>t'
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_clear_cache_on_exit = 1
 nnoremap <leader>b :CtrlPBuffer<CR>
-set wildignore+=*.o,.git,*.jpg,*.png,*.swp,*.d,*.gif
+set wildignore+=*.o,.git,*.jpg,*.png,*.swp,*.d,*.gif,node_modules
 
 " OmniCompletion
 set completeopt=longest,menuone
