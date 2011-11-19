@@ -56,8 +56,43 @@ filetype indent off
 let mapleader=","
 let maplocalleader=","
 
-" Round indentation to multiple of shitwidth
+" Round indentation to multiple of shiftwidth
 set shiftround
+
+" Resize splits when the window is resized
+au VimResized * exe "normal! \<c-w>="
+
+" Highlight VCS conflict markers
+match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
+
+set statusline=%f    " Path.
+set statusline+=%m   " Modified flag.
+set statusline+=%r   " Readonly flag.
+set statusline+=%w   " Preview window flag.
+
+set statusline+=\    " Space.
+
+set statusline+=%#redbar#                " Highlight the following as a warning.
+set statusline+=%{SyntasticStatuslineFlag()} " Syntastic errors.
+set statusline+=%*                           " Reset highlighting.
+
+set statusline+=%=   " Right align.
+
+" File format, encoding and type.  Ex: "(unix/utf-8/python)"
+set statusline+=(
+set statusline+=%{&ff}                        " Format (unix/DOS).
+set statusline+=/
+set statusline+=%{strlen(&fenc)?&fenc:&enc}   " Encoding (utf-8).
+set statusline+=/
+set statusline+=%{&ft}                        " Type (python).
+set statusline+=)
+
+" Line and column position and counts.
+set statusline+=\ (line\ %l\/%L,\ col\ %03c)
+
+" Easier to type, and I never use the default behavior.
+noremap H ^
+noremap L g_
 
 " let [jk] go down and up by display lines instead of real lines. Let g[jk]
 " do what [jk] normally does
