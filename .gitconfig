@@ -15,7 +15,18 @@
   untracked = cyan
 [alias]
   lg = log --graph --pretty=format:'%Cred%h%Creset - %Cblue%an:%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+  slog = log --graph --pretty=format:'%Cred%h%Creset - %Cblue%an:%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative -n 5
   amend = commit --amend
+  gg = grep -A5 -B5 --color -n
+  cp = cherry-pick
+  co = checkout
+  f = fetch
+  ire = rebase -i
+  s = status
+  dw = diff --ignore-space-change
+  pd = diff --patience
+  pr = pull --rebase
+  sync = "!f() { branch=$(git name-rev --name-only HEAD); echo Syncing $branch with master && git checkout master && git pull && git checkout $branch && git rebase master; }; f"
 [core]
   editor = /usr/bin/vim
   excludesfile = ~/.gitignore_global
