@@ -80,15 +80,17 @@ set statusline+=%=   " Right align.
 
 " File format, encoding and type.  Ex: "(unix/utf-8/python)"
 set statusline+=(
-set statusline+=%{&ff}                        " Format (unix/DOS).
-set statusline+=/
-set statusline+=%{strlen(&fenc)?&fenc:&enc}   " Encoding (utf-8).
-set statusline+=/
 set statusline+=%{&ft}                        " Type (python).
 set statusline+=)
 
 " Line and column position and counts.
-set statusline+=\ (line\ %l\/%L,\ col\ %03c)
+set statusline+=\ (L%l\/%L,\ C%03c)
+
+" Don't move on *, but turn no hlsearch
+nnoremap * *<c-o>
+
+" Toggle hlsearch
+nnoremap <Leader>h :set hlsearch!<CR>
 
 " Easier to type, and I never use the default behavior.
 noremap H ^
