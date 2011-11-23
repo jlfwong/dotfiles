@@ -86,8 +86,8 @@ set statusline+=)
 " Line and column position and counts.
 set statusline+=\ (L%l\/%L,\ C%03c)
 
-" Don't move on *
-nnoremap * *<c-o>
+" Don't move on *, but turn on hlsearch
+nnoremap * :set hlsearch<CR>*<c-o>
 
 " Toggle hlsearch
 nnoremap <Leader>h :set hlsearch!<CR>
