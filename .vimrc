@@ -140,7 +140,7 @@ let g:ctrlp_map = '<Leader>t'
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_clear_cache_on_exit = 1
 nnoremap <leader>b :CtrlPBuffer<CR>
-set wildignore+=*.o,.git,*.jpg,*.png,*.swp,*.d,*.gif,node_modules
+set wildignore+=*.o,.git,*.jpg,*.png,*.swp,*.d,*.gif,*.pyc,node_modules
 
 " OmniCompletion
 set completeopt=longest,menuone

@@ -1,18 +1,22 @@
 [user]
   name = Jamie Wong
   email = jamie.lf.wong@gmail.com
+
 [color]
   branch = auto
   diff = auto
   status = auto
+
 [color "branch"]
   current = yellow reverse
   local = yellow
   remote = green
+
 [color "status"]
   added = yellow
   changed = green
   untracked = cyan
+
 [alias]
   lg = log --graph --pretty=format:'%Cred%h%Creset - %Cblue%an:%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
   slog = log --graph --pretty=format:'%Cred%h%Creset - %Cblue%an:%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative -n 5
@@ -27,10 +31,24 @@
   pd = diff --patience
   pr = pull --rebase
   sync = "!f() { branch=$(git name-rev --name-only HEAD); echo Syncing $branch with master && git checkout master && git pull && git checkout $branch && git rebase master; }; f"
+
 [core]
   editor = /usr/bin/vim
   excludesfile = ~/.gitignore_global
-[diff]
+
+[merge]
   tool = vimdiff
+
+[diff]
+  # Use mnemonic prefixes (index, work tree, commit, object) instead of the standard a and b notation
+  mnemonicprefix = true
+
+  # Detect renames as well as copies
+  renames = copies
+
+[push]
+  # Push the current branch to its upstream branch if no refspec given, instead of all branches (the default)
+  default = upstream
+
 [difftool]
   prompt = false
