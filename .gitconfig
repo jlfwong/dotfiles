@@ -30,7 +30,7 @@
   dw = diff --ignore-space-change
   pd = diff --patience
   pr = pull --rebase
-  sync = "!f() { branch=$(git name-rev --name-only HEAD); echo Syncing $branch with master && git checkout master && git pull && git checkout $branch && git rebase master; }; f"
+  sync = "!f() { branch=$(git name-rev --name-only HEAD); echo Syncing $branch with master && git checkout master && git pull --ff-only && git checkout $branch && git rebase master; }; f"
 
 [core]
   editor = /usr/bin/vim
