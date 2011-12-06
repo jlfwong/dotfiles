@@ -45,9 +45,12 @@ set ignorecase
 set smartcase
 set wildmenu
 
+set textwidth=80
+set formatoptions=tcroqnl1
+
 " Mark the 81st column
 if exists('+colorcolumn')
-  set colorcolumn=81
+  set colorcolumn=+1
 endif
 
 filetype plugin on
