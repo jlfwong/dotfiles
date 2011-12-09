@@ -110,6 +110,10 @@ nnoremap gj j
 nnoremap <Leader>gg :GitGrep<space>
 vnoremap <Leader>gg "gy:GitGrep <C-R>g<CR>
 
+" Sort
+" Select a block of text in visual mode then hit ,s
+vnoremap <Leader>s :!sort<CR>
+
 "Map Semicolon to : for faster command execution
 nmap ; :
 
