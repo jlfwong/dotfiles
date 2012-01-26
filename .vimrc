@@ -12,6 +12,8 @@ filetype off
 " Run :BundleInstall to install all of the plugins
 source ~/.vim/.vundle
 
+set conceallevel=2
+let g:tex_conceal="admg"
 set autoread
 set autowrite
 set laststatus=2
