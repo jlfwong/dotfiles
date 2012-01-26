@@ -18,6 +18,7 @@
   untracked = cyan
 
 [alias]
+  ci = commit
   lg = log --graph --pretty=format:'%Cred%h%Creset %Creset%Cblue%an%Creset %s %Cgreen(%cr)%Cred%d%Creset' --abbrev-commit --date=relative
   amend = commit --amend
   gg = grep -A5 -B5 --color -n
@@ -44,10 +45,6 @@
 
   # Detect renames as well as copies
   renames = copies
-
-[push]
-  # Push the current branch to its upstream branch if no refspec given, instead of all branches (the default)
-  default = upstream
 
 [difftool]
   prompt = false
