@@ -23,3 +23,4 @@ export CLICOLOR=1
 export EDITOR=/usr/bin/vim
 
 alias pyserve="python -m SimpleHTTPServer"
+alias g="git"
