@@ -27,6 +27,7 @@
   f = fetch
   ire = rebase -i
   s = status
+  ds = diff --cached
   dw = diff --ignore-space-change
   pd = diff --patience
   pr = pull --rebase
