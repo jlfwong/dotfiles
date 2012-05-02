@@ -13,7 +13,7 @@ filetype off
 source ~/.vim/.vundle
 
 set conceallevel=2
-let g:tex_conceal="admg"
+let g:tex_conceal="admgs"
 set autoread
 set autowrite
 set laststatus=2
@@ -126,11 +126,16 @@ nnoremap <Leader>z :ZoomWin<CR>
 nmap ] :tabNext<CR>
 
 "\ and | switch between split screens
-nmap \ <C-w><C-w>
-nmap \| <C-w>W
+nnoremap <Tab> <C-w><C-w>
+nnoremap <S-Tab> <C-w>W
 
 "NERDTree
 map <Leader>n :NERDTreeToggle<CR>
+
+"NERDCommenter
+let g:NERDCreateDefaultMappings = 0
+map <Leader>// <plug>NERDCommenterAlignLeft
+map <Leader>/, <plug>NERDCommenterUncomment
 
 "Gundo
 nmap <Leader>u :GundoToggle<CR>
@@ -149,7 +154,7 @@ let g:ctrlp_map = '<Leader>t'
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_clear_cache_on_exit = 1
 nnoremap <leader>b :CtrlPBuffer<CR>
-set wildignore+=*.o,.git,*.jpg,*.png,*.swp,*.d,*.gif,*.pyc,node_modules
+set wildignore+=*.o,.git,*.jpg,*.png,*.swp,*.d,*.gif,*.pyc,node_modules,*.class,*.crf
 
 " OmniCompletion
 set completeopt=longest,menuone
