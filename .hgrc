@@ -1,0 +1,65 @@
+[pager]
+pager = LESS='FSRX' less
+attend = annotate, cat, diff, export, glog, log, qdiff, slog, dlog, gslog, sglog, df, nlog, outgoing
+# note: this can be temporarily disabled with --pager=off
+
+[ui]
+username = Jamie Wong <jamiewong@khanacademy.org>
+
+[web]
+#cacerts = ~/.hg/dummycert.pem
+
+[extensions]
+hgext.extdiff =
+hgext.record =
+hgext.mq =
+color =
+graphlog =
+hgext.churn =
+#histedit = ~/src/histedit/hg_histedit.py
+rebase =
+pager =
+progress =
+hgext.purge =
+hgext.shelve = ~/.hgext/hgshelve.py
+hgext.collapse = ~/.hgext/collapse.py
+# other extensions that might be good
+# transplant?
+# hgk =
+dummy = $HOME/code/khan/devtools/kiln-review/review.py
+rdiff = $HOME/code/khan/devtools/mercurial-extensions-rdiff/rdiff.py
+kilnauth = $HOME/code/khan/devtools/kilnauth.py
+prompt = $HOME/dotfiles/hg-prompt/prompt.py
+
+#[extdiff]
+#cmd.opendiff = fmdiff
+
+[alias]
+#show = log --color=always -pr
+slog = log --style=$HOME/dotfiles/mercurial-cli-templates/map-cmdline.slog
+nlog = log --style=$HOME/dotfiles/mercurial-cli-templates/map-cmdline.nlog
+sglog = glog --style=$HOME/dotfiles/mercurial-cli-templates/map-cmdline.sglog
+gslog = sglog
+dlog = log --style=$HOME/dotfiles/mercurial-cli-templates/map-cmdline.dlog
+st = st -S
+df = diff
+nudge = push --rev .
+
+[diff]
+git = True
+
+[auth]
+kiln.prefix=https://khanacademy.kilnhg.com
+kiln.username=jamiewong@khanacademy.org
+
+[paths]
+stable = https://khanacademy.kilnhg.com/Repo/Website/Group/stable
+accuracy = https://khanacademy.kilnhg.com/Repo/Website/Group/accuracy-model
+review = https://khanacademy.kilnhg.com/Repo/Website/Group/review
+labs-cs = https://khanacademy.kilnhg.com/Code/Website/Group/labs-cs
+
+[hooks]
+pretxncommit.khanlint = $HOME/code/khan/devtools/khan-linter/khanlint.py
+
+[hostfingerprints]
+khanacademy.kilnhg.com = fe:ab:65:89:7c:6f:1a:21:a8:39:54:6c:2a:cb:ca:ae:e9:e5:f0:01
