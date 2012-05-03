@@ -304,12 +304,12 @@ def prompt(ui, repo, fs='', **opts):
 
         flag = ''
         if '|modified' not in g and '|unknown' not in g:
-            flag = '!' if modified else '?' if unknown else ''
+            flag = '[modified]' if modified else '[new]' if unknown else ''
         else:
             if '|modified' in g:
-                flag += '!' if modified else ''
+                flag += '[modified]' if modified else ''
             if '|unknown' in g:
-                flag += '?' if unknown else ''
+                flag += '[new]' if unknown else ''
 
         return _with_groups(g, flag) if flag else ''
 
