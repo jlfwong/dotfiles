@@ -5,6 +5,7 @@ attend = annotate, cat, diff, export, glog, log, qdiff, slog, dlog, gslog, sglog
 
 [ui]
 username = Jamie Wong <jamiewong@khanacademy.org>
+ignore = ~/dotfiles/.hgignore_global
 
 [web]
 #cacerts = ~/.hg/dummycert.pem
