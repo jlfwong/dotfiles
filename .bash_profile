@@ -28,6 +28,8 @@ function hg_ps1
   hg prompt "({branch}{@{bookmark}}{ {status}}) " 2> /dev/null
 }
 
+PROMPT_COMMAND='bpwd=$(basename `pwd`); echo -ne "\033]0;\007\033k${bpwd}\033\\"'
+
 export PS1='\e[33m\][\W] \e[32m\]$(git_ps1)\e[31m\]$(hg_ps1)\e[0m\]'
 
 export CLICOLOR=1
