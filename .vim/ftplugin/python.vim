@@ -11,3 +11,5 @@ abbr pdb! import pdb, sys; pdb.Pdb(stdin=sys.__stdin__, stdout=sys.__stdout__).s
 abbr ipdb! import ipdb, sys; ipdb.Pdb(stdin=sys.__stdin__, stdout=sys.__stdout__).set_trace()
 
 abbr ipy! import IPython; IPython.ipapi.launch_new_instance(dict(locals().items() + globals.items()))
+
+abbr debug! import imp; debug = imp.load_source('debug', '/Users/jlfwong/dotfiles/tools/python/debug.py');
