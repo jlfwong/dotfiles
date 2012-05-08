@@ -165,6 +165,21 @@ set omnifunc=syntaxcomplete#Complete
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 
+" Neocomplcache
+" Disable AutoComplPop.
+let g:acp_enableAtStartup = 0
+" Use neocomplcache.
+let g:neocomplcache_enable_at_startup = 1
+" Use smartcase.
+let g:neocomplcache_enable_smart_case = 1
+" Use camel case completion.
+let g:neocomplcache_enable_camel_case_completion = 1
+" Use underbar completion.
+let g:neocomplcache_enable_underbar_completion = 1
+" Set minimum syntax keyword length.
+let g:neocomplcache_min_syntax_length = 3
+"let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
+
 " SnipMate
 let g:snippets_dir="~/.vim/snippets/,~/.vim/bundle/snipmate.vim/snippets/"
 ino <silent> <c-r><tab> <c-r>=TriggerSnippet()<cr>
