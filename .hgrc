@@ -24,6 +24,7 @@ progress =
 hgext.purge =
 hgext.shelve = ~/.hgext/hgshelve.py
 hgext.collapse = ~/.hgext/collapse.py
+hgext.crecord = ~/.hgext/crecord/
 # other extensions that might be good
 # transplant?
 # hgk =
