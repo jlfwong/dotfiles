@@ -114,7 +114,7 @@ vnoremap <Leader>gg "gy:GitGrep <C-R>g<CR>
 
 " Sort
 " Select a block of text in visual mode then hit ,s
-vnoremap <Leader>s :!sort<CR>
+vnoremap <Leader>s :sort<CR>
 
 "Map Semicolon to : for faster command execution
 nmap ; :
@@ -122,12 +122,15 @@ nmap ; :
 "Zoom
 nnoremap <Leader>z :ZoomWin<CR>
 
-"] and ^] switch between tabs
+"] switch between tabs
 nmap ] :tabNext<CR>
 
-"\ and | switch between split screens
+"<Tab> and <S-Tab> switch between split screens
 nnoremap <Tab> <C-w><C-w>
 nnoremap <S-Tab> <C-w>W
+
+" Mapping tab also remaps C-i, so make C-p do what C-i used to do
+nnoremap <C-p> <C-i>
 
 "NERDTree
 map <Leader>n :NERDTreeToggle<CR>
@@ -154,7 +157,7 @@ let g:ctrlp_map = '<Leader>t'
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_clear_cache_on_exit = 1
 nnoremap <leader>b :CtrlPBuffer<CR>
-set wildignore+=*.o,.git,*.jpg,*.png,*.swp,*.d,*.gif,*.pyc,node_modules,*.class,*.crf,*.hg
+set wildignore+=*.o,.git,*.jpg,*.png,*.swp,*.d,*.gif,*.pyc,node_modules,*.class,*.crf,*.hg,*.orig,.meteor
 
 " OmniCompletion
 set completeopt=longest,menuone
@@ -175,6 +178,7 @@ vnoremap <silent> * :<C-U>
   \gvy/<C-R><C-R>=substitute(
   \escape(@", '/\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
   \gV:call setreg('"', old_reg, old_regtype)<CR>
+  \:set hlsearch<CR><C-o>
 vnoremap <silent> # :<C-U>
   \let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
   \gvy?<C-R><C-R>=substitute(
