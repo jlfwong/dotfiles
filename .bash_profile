@@ -25,7 +25,7 @@ function git_ps1
 
 function hg_ps1
 {
-  hg prompt "({root|basename}@{rev}{ {status}}{>{outgoing}}{<{incoming}}) " 2> /dev/null
+  hg prompt "({root|basename}@{rev}{ {status}{shelf}}{>{outgoing}}{<{incoming}}) " 2> /dev/null
 }
 
 PROMPT_COMMAND='bpwd=$(basename `pwd`); echo -ne "\033]0;\007\033k${bpwd}\033\\"'

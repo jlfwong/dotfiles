@@ -313,6 +313,16 @@ def prompt(ui, repo, fs='', **opts):
 
         return _with_groups(g, flag) if flag else ''
 
+    def _shelf(m):
+        try:
+            shelves_path = repo.join('shelves')
+            if os.path.exists(shelves_path) and os.listdir(shelves_path):
+                return _with_groups(m.groups(), '[shelved]')
+            else:
+                return ''
+        except KeyError:
+            return ''
+
     def _tags(m):
         g = m.groups()
 
@@ -392,6 +402,7 @@ def prompt(ui, repo, fs='', **opts):
         'rev(\|merge)?': _rev,
         'root': _root,
         'root\|basename': _basename,
+        'shelf':_shelf,
         'status(?:'
             '(\|modified)'
             '|(\|unknown)'
