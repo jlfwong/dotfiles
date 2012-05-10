@@ -37,7 +37,7 @@ prompt = $HOME/dotfiles/hg-prompt/prompt.py
 #cmd.opendiff = fmdiff
 
 [alias]
-show = log --color=always -pr
+show = log --color=always -vpr
 slog = log --style=$HOME/dotfiles/mercurial-cli-templates/map-cmdline.slog
 nlog = log --style=$HOME/dotfiles/mercurial-cli-templates/map-cmdline.nlog
 sglog = glog --style=$HOME/dotfiles/mercurial-cli-templates/map-cmdline.sglog
