@@ -1,6 +1,6 @@
 [pager]
 pager = LESS='FSRX' less
-attend = annotate, cat, diff, export, glog, log, qdiff, slog, dlog, gslog, sglog, df, nlog, outgoing
+attend = annotate, cat, diff, export, glog, log, qdiff, slog, dlog, gslog, sglog, df, nlog, outgoing, lg
 # note: this can be temporarily disabled with --pager=off
 
 [ui]
@@ -16,6 +16,7 @@ hgext.record =
 hgext.mq =
 color =
 graphlog =
+fetch =
 hgext.churn =
 #histedit = ~/src/histedit/hg_histedit.py
 rebase =
@@ -25,9 +26,6 @@ hgext.purge =
 hgext.shelve = ~/.hgext/hgshelve.py
 hgext.collapse = ~/.hgext/collapse.py
 hgext.crecord = ~/.hgext/crecord/
-# other extensions that might be good
-# transplant?
-# hgk =
 dummy = $HOME/code/khan/devtools/kiln-review/review.py
 rdiff = $HOME/code/khan/devtools/mercurial-extensions-rdiff/rdiff.py
 kilnauth = $HOME/code/khan/devtools/kilnauth.py
@@ -42,6 +40,7 @@ slog = log --style=$HOME/dotfiles/mercurial-cli-templates/map-cmdline.slog
 nlog = log --style=$HOME/dotfiles/mercurial-cli-templates/map-cmdline.nlog
 sglog = glog --style=$HOME/dotfiles/mercurial-cli-templates/map-cmdline.sglog
 gslog = sglog
+lg = glog --style=$HOME/dotfiles/mercurial-cli-templates/map-cmdline.lg
 dlog = log --style=$HOME/dotfiles/mercurial-cli-templates/map-cmdline.dlog
 st = st -S
 df = diff
