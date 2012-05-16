@@ -35,7 +35,7 @@ prompt = $HOME/dotfiles/hg-prompt/prompt.py
 #cmd.opendiff = fmdiff
 
 [alias]
-show = log --color=always -vpr
+show = log --stat --color=always -vpr
 slog = log --style=$HOME/dotfiles/mercurial-cli-templates/map-cmdline.slog
 nlog = log --style=$HOME/dotfiles/mercurial-cli-templates/map-cmdline.nlog
 sglog = glog --style=$HOME/dotfiles/mercurial-cli-templates/map-cmdline.sglog
@@ -45,8 +45,8 @@ dlog = log --style=$HOME/dotfiles/mercurial-cli-templates/map-cmdline.dlog
 st = st -S
 df = diff
 nudge = push --rev .
-wip = !hg shelve -n $(hg prompt '{bookmark}')-wip
-unwip = !hg unshelve -n $(hg prompt '{bookmark}')-wip
+wip = !hg shelve -n $(hg id -B .)-wip
+unwip = !hg unshelve -n $(hg id -B .)-wip
 
 [diff]
 git = True
