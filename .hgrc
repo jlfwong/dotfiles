@@ -1,6 +1,6 @@
 [pager]
 pager = LESS='FSRX' less
-attend = annotate, cat, diff, export, glog, log, qdiff, slog, dlog, gslog, sglog, df, nlog, outgoing, lg
+attend = annotate, cat, diff, export, glog, log, qdiff, slog, dlog, gslog, sglog, df, nlog, outgoing, lg, show
 # note: this can be temporarily disabled with --pager=off
 
 [ui]
@@ -45,6 +45,8 @@ dlog = log --style=$HOME/dotfiles/mercurial-cli-templates/map-cmdline.dlog
 st = st -S
 df = diff
 nudge = push --rev .
+wip = !hg shelve -n $(hg prompt '{bookmark}')-wip
+unwip = !hg unshelve -n $(hg prompt '{bookmark}')-wip
 
 [diff]
 git = True
@@ -64,3 +66,6 @@ pretxncommit.khanlint = $HOME/code/khan/devtools/khan-linter/khanlint.py
 
 [hostfingerprints]
 khanacademy.kilnhg.com = fe:ab:65:89:7c:6f:1a:21:a8:39:54:6c:2a:cb:ca:ae:e9:e5:f0:01
+
+[bookmarks]
+track.current = True
