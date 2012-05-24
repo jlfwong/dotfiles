@@ -45,9 +45,13 @@ dlog = log --style=$HOME/dotfiles/mercurial-cli-templates/map-cmdline.dlog
 st = st -S
 df = diff
 nudge = push --rev .
-wip = !hg shelve -n $(hg id -B .)-wip
-unwip = !hg unshelve -n $(hg id -B .)-wip
+wip = !hg shelve -n $(hg prompt '{bookmark}')-wip
+unwip = !hg unshelve -n $(hg prompt '{bookmark}')-wip
 today = !hg log --template '{rev} {desc|firstline|strip}\n' -r "sort(user('$(hg showconfig ui.username | sed 's/.*<\(.*\)>/\1/')') and date(-1), -date)"
+retry-commit = !EDITOR="vim -c 'r $(hg root)/.hg/last-message.txt'" hg commit
+
+# This assumes you have a clean working dir and that the commit was *just* made
+amend-message = !hg log -r . --template '{desc}' > /tmp/commit && hg rollback && EDITOR="vim -c 'r /tmp/commit'" hg commit
 
 [diff]
 git = True
