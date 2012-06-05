@@ -1,5 +1,19 @@
 syntax on
 
+set t_Co=16
+set background=dark
+colorscheme solarized
+" Link diffAdded and diffRemoved to some things that happen to be green and red
+" respectively
+hi link diffAdded Statement
+hi link diffRemoved Special
+hi link diffLine Comment
+" I have no idea why this is necessary - for some reason,
+" ctermbg and ctermfg are being swapped *only* for Comment and
+" vimLineComment
+hi Comment ctermfg=8 ctermbg=10
+hi vimLineComment ctermfg=8 ctermbg=10
+
 let g:syntastic_auto_loc_list=0
 let g:syntastic_enable_signs=1
 set mouse=a
@@ -27,9 +41,9 @@ set list listchars=tab:\ \ ,trail:·
 " General indentation settings
 
 " Note that these vary from language to language
-set tabstop=2   "Set space width of tabs
-set softtabstop=2
-set sw=2
+set tabstop=4   "Set space width of tabs
+set softtabstop=4
+set sw=4
 set expandtab
 
 set splitright  "By default, split to the right
