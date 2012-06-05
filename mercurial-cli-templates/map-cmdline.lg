@@ -1,5 +1,5 @@
-changeset = '\033[0;31m{rev} \033[0;34m{author|person}\033[0m {desc|firstline|strip} \033[0;32m({date|age}) {branches}{bookmarks}{tags}\n\n'
-changeset_verbose = '\033[0;31m{rev}:{node|short} \033[0;34m{author|person}\033[0m {desc|firstline|strip} \033[0;32m({date|age}) {branches}{bookmarks}{tags}\n\n'
+changeset = '\033[0;31m{rev}:{phase} \033[0;34m{author|person}\033[0m {desc|firstline|strip} \033[0;32m({date|age}) {branches}{bookmarks}{tags}\n\n'
+changeset_verbose = '\033[0;31m{rev}:{node|short}:{phase} \033[0;34m{author|person}\033[0m {desc|firstline|strip} \033[0;32m({date|age}) {branches}{bookmarks}{tags}\n\n'
 
 start_branches = ' '
 branch = '\033[0;31m{branch}\033[0m'
