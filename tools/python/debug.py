@@ -13,3 +13,15 @@ def pdb_on_error(func):
             traceback.print_exc(file=sys.stdout)
             pdb.Pdb(stdin=sys.__stdin__, stdout=sys.__stdout__).set_trace()
     return pdbd
+
+def ipdb_on_error(func):
+    @wraps(func)
+    def ipdbd(*args, **kwargs):
+        import ipdb
+        try:
+            func(*args, **kwargs)
+        except Exception, e:
+            print '\n' + '=' * 30 + ' ipdb_on_error ' + '=' * 30
+            traceback.print_exc(file=sys.stdout)
+            ipdb.set_trace()
+    return ipdbd
