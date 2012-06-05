@@ -7,9 +7,6 @@ attend = annotate, cat, diff, export, glog, log, qdiff, slog, dlog, gslog, sglog
 username = Jamie Wong <jamiewong@khanacademy.org>
 ignore = ~/dotfiles/.hgignore_global
 
-[web]
-#cacerts = ~/.hg/dummycert.pem
-
 [extensions]
 hgext.extdiff =
 hgext.record =
@@ -18,7 +15,6 @@ color =
 graphlog =
 fetch =
 hgext.churn =
-#histedit = ~/src/histedit/hg_histedit.py
 rebase =
 pager =
 progress =
@@ -31,9 +27,6 @@ rdiff = $HOME/code/khan/devtools/mercurial-extensions-rdiff/rdiff.py
 kilnauth = $HOME/code/khan/devtools/kilnauth.py
 prompt = $HOME/dotfiles/hg-prompt/prompt.py
 
-#[extdiff]
-#cmd.opendiff = fmdiff
-
 [alias]
 show = log --stat --color=always -vpr
 slog = log --style=$HOME/dotfiles/mercurial-cli-templates/map-cmdline.slog
@@ -45,14 +38,22 @@ lg = lga --rev 'ancestors(.)'
 dlog = log --style=$HOME/dotfiles/mercurial-cli-templates/map-cmdline.dlog
 st = st -S
 df = diff
+amend = commit --amend
+
+# Safer push
 nudge = push --rev .
-wip = !hg shelve -n $(hg prompt '{bookmark}')-wip
-unwip = !hg unshelve -n $(hg prompt '{bookmark}')-wip
-today = !hg log --template '{rev} {desc|firstline|strip}\n' -r "sort(user('$(hg showconfig ui.username | sed 's/.*<\(.*\)>/\1/')') and date(-1), -date)"
+
+# NOTE: If you run `hg commit --amend`, and that failed - using retry-commit
+# will NOT amend
 retry-commit = !EDITOR="vim -c 'r $(hg root)/.hg/last-message.txt'" hg commit
 
-# This assumes you have a clean working dir and that the commit was *just* made
-amend-message = !hg log -r . --template '{desc}' > /tmp/commit && hg rollback && EDITOR="vim -c 'r /tmp/commit'" hg commit
+# Figuring out what I did
+today = !hg log --template '{rev} {desc|firstline|strip}\n' -r "sort(user('$(hg showconfig ui.username | sed 's/.*<\(.*\)>/\1/')') and date(-1), -date)"
+lastweek = !hg log --template '{rev} {date|shortdate} {desc|firstline|strip}\n' -r "sort(user('$(hg showconfig ui.username | sed 's/.*<\(.*\)>/\1/')') and date(-8), -date)"
+changelog = !hg log --style=$HOME/dotfiles/mercurial-cli-templates/map-cmdline.changelog -r "sort(user('$(hg showconfig ui.username | sed 's/.*<\(.*\)>/\1/')'), -date)"
+
+# What are all the points I can update to?
+points = !echo '---- Branches' && hg branches; echo '---- Tags' && hg tags; echo '---- Bookmarks' && hg book
 
 [diff]
 git = True
@@ -73,7 +74,6 @@ pretxncommit.khanlint = $HOME/code/khan/devtools/khan-linter/khanlint.py
 [hostfingerprints]
 khanacademy.kilnhg.com = fe:ab:65:89:7c:6f:1a:21:a8:39:54:6c:2a:cb:ca:ae:e9:e5:f0:01
 bitbucket.org = 24:9c:45:8b:9c:aa:ba:55:4e:01:6d:58:ff:e4:28:7d:2a:14:ae:3b
-code.google.com = 97:1a:9f:06:54:23:96:b8:fa:3f:d8:78:c1:bf:84:34:4b:5e:cb:30
 
 [bookmarks]
 track.current = True
