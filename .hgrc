@@ -26,6 +26,7 @@ hgext.purge =
 hgext.shelve = ~/.hgext/hgshelve.py
 hgext.collapse = ~/.hgext/collapse.py
 hgext.crecord = ~/.hgext/crecord/
+hgext.remotebranches = ~/.hgext/hg_remotebranches.py
 rdiff = $HOME/code/khan/devtools/mercurial-extensions-rdiff/rdiff.py
 kilnauth = $HOME/code/khan/devtools/kilnauth.py
 prompt = $HOME/dotfiles/hg-prompt/prompt.py
