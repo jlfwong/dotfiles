@@ -309,7 +309,7 @@ def prompt(ui, repo, fs='', **opts):
             if '|modified' in g:
                 flag += '[modified]' if modified else ''
             if '|unknown' in g:
-                flag += '[new]' if unknown else ''
+                flag += '[untracked]' if unknown else ''
 
         return _with_groups(g, flag) if flag else ''
 
