@@ -1,3 +1,3 @@
-setlocal ts=2 sw=2 sts=2
+setlocal ts=4 sw=4 sts=4
 
 map <buffer> <Leader>c :!open -a "Google Chrome" %
