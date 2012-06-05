@@ -1,4 +1,34 @@
---type-set
-haml=.haml
---type-set
-coffee=.coffee
+# Use case-insensitive less as the pager. -r is so we get color escape codes
+--pager=less -ix4SRFX
+
+# Always use color
+--color
+
+# Case-insensitive if query is lower case, otherwise it's case sensitive
+--smart-case
+
+# Show context of search hit
+--context
+
+# Filetypes that do not ship with ack
+--type-set=haml=.haml
+--type-set=erb=.erb
+--type-set=sass=.sass
+--type-set=scss=.scss
+--type-set=less=.less
+--type-set=coffee=.coffee
+--type-set=handlebars=.handlebars
+--type-add=html=.handlebars,.tmpl
+--type-set=jst=.jst
+
+################################################################################
+# Khan Academy specific
+
+# Ignore files matching the following regex
+--invert-file-match
+-G(hashed-\w+.(js|css)|combined\.(js|css)|compressed\.(js|css))
+
+# Directories to ignore at any level
+--ignore-dir=third_party
+--ignore-dir=exercises-packed
+--ignore-dir=compiled_templates
