@@ -32,6 +32,8 @@
   pd = diff --patience
   pr = pull --rebase
   sync = "!f() { branch=$(git name-rev --name-only HEAD); echo Syncing $branch with master && git checkout master && git pull --ff-only && git checkout $branch && git rebase master; }; f"
+  outgoing = log origin/master..HEAD
+  incoming = "!git fetch $1; git log HEAD..$1/master"
 
 [core]
   editor = /usr/bin/vim
