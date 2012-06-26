@@ -37,3 +37,5 @@ export EDITOR=/usr/bin/vim
 
 alias pyserve="python -m SimpleHTTPServer"
 alias g="git"
+
+export PATH="$HOME/dotfiles/bin:$PATH"
