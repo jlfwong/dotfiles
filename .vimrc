@@ -3,11 +3,16 @@ syntax on
 set t_Co=16
 set background=dark
 colorscheme solarized
+" Change folding colors
+hi link Folded Statement
+hi link FoldColumn Statement
+
 " Link diffAdded and diffRemoved to some things that happen to be green and red
 " respectively
 hi link diffAdded Statement
 hi link diffRemoved Special
 hi link diffLine Comment
+
 " I have no idea why this is necessary - for some reason,
 " ctermbg and ctermfg are being swapped *only* for Comment and
 " vimLineComment
@@ -126,6 +131,11 @@ nnoremap gj j
 nnoremap <Leader>gg :GitGrep<space>
 vnoremap <Leader>gg "gy:GitGrep <C-R>g<CR>
 
+" Folding
+" Toggle fold
+nnoremap <Space> za
+set foldtext=getline(v:foldstart)
+
 " Sort
 " Select a block of text in visual mode then hit ,s
 vnoremap <Leader>s :sort<CR>
@@ -135,9 +145,6 @@ nmap ; :
 
 "Zoom
 nnoremap <Leader>z :ZoomWin<CR>
-
-"] switch between tabs
-nmap ] :tabNext<CR>
 
 "<Tab> and <S-Tab> switch between split screens
 nnoremap <Tab> <C-w><C-w>
@@ -173,6 +180,9 @@ let g:ctrlp_clear_cache_on_exit = 1
 nnoremap <leader>b :CtrlPBuffer<CR>
 set wildignore+=*.o,.git,*.jpg,*.png,*.swp,*.d,*.gif,*.pyc,node_modules,*.class,*.crf,*.hg,*.orig,.meteor
 
+" Yankring
+nnoremap <silent> <leader>y :YRShow<CR>
+
 " OmniCompletion
 set completeopt=longest,menuone
 set omnifunc=syntaxcomplete#Complete
@@ -192,7 +202,9 @@ let g:neocomplcache_enable_camel_case_completion = 1
 let g:neocomplcache_enable_underbar_completion = 1
 " Set minimum syntax keyword length.
 let g:neocomplcache_min_syntax_length = 3
-"let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
+
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 
 " SnipMate
 let g:snippets_dir="~/.vim/snippets/,~/.vim/bundle/snipmate.vim/snippets/"
@@ -217,6 +229,7 @@ vnoremap <silent> # :<C-U>
 " GUI Options
 if has("gui_running")
   set guioptions=egt
+  let g:Powerline_symbols = 'fancy'
 endif
 
 "LANGUAGE SPECIFIC COMMANDS
