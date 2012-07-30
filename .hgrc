@@ -18,7 +18,7 @@ hgext.churn =
 rebase =
 pager =
 progress =
-hgext.purge =
+purge =
 hgext.shelve = ~/.hgext/hgshelve.py
 hgext.collapse = ~/.hgext/collapse.py
 hgext.crecord = ~/.hgext/crecord/
@@ -39,6 +39,14 @@ dlog = log --style=$HOME/dotfiles/mercurial-cli-templates/map-cmdline.dlog
 st = st -S
 df = diff
 amend = commit --amend
+og = outgoing -r .
+
+default = up default/default
+sync = !f() { hg pull && hg rebase -d default/default; }; f
+arcpush = !f() { arc amend && hg push -r . && hg book -d $(hg prompt '{bookmark}'); }; f
+
+# Nuke everything in the working copy
+nuke = !hg up -C . && hg clean
 
 # Safer push
 nudge = push --rev .
