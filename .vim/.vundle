@@ -1,5 +1,3 @@
-"vim:ft=vim
-"
 " Vundle
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
@@ -15,7 +13,6 @@ Bundle 'digitaltoad/vim-jade'
 Bundle 'godlygeek/tabular'
 Bundle 'groenewege/vim-less'
 Bundle 'hail2u/vim-css3-syntax'
-Bundle 'jpalardy/vim-slime'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'kien/ctrlp.vim'
 Bundle 'majutsushi/tagbar'
