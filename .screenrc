@@ -141,3 +141,4 @@ defbce "on"
 
 caption always
 caption string '%{gk}[ %{+b Y}%h%{-b G} %H %{g}%{-b}][%= %{wk}%?%-Lw%?%{=b kR} (%{W}%n*%f%t%?(%u)%?%{=b kR})%{= kw}%?%+Lw%?%?%= %{g}][%{Y}%l%{g}] %{=b C}[ %m/%d %c]%{W}'
+shell -$SHELL

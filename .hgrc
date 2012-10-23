@@ -11,6 +11,7 @@ ignore = ~/dotfiles/.hgignore_global
 hgext.extdiff =
 hgext.record =
 hgext.mq =
+hgext.hbisect=
 color =
 graphlog =
 fetch =
@@ -38,7 +39,7 @@ lg = lga --rev 'ancestors(.)'
 dlog = log --style=$HOME/dotfiles/mercurial-cli-templates/map-cmdline.dlog
 st = st -S
 df = diff
-amend = commit --amend
+amend = !f() { hg log --rev . --template '{desc}' > /tmp/hgmsg && hg commit --amend -l /tmp/hgmsg; }; f
 og = outgoing -r .
 
 default = up default/default
@@ -65,23 +66,6 @@ points = !echo '---- Branches' && hg branches; echo '---- Tags' && hg tags; echo
 
 [diff]
 git = True
-
-[auth]
-kiln.prefix=https://khanacademy.kilnhg.com
-kiln.username=jamiewong@khanacademy.org
-
-[paths]
-stable = https://khanacademy.kilnhg.com/Repo/Website/Group/stable
-accuracy = https://khanacademy.kilnhg.com/Repo/Website/Group/accuracy-model
-review = https://khanacademy.kilnhg.com/Repo/Website/Group/review
-labs-cs = https://khanacademy.kilnhg.com/Code/Website/Group/labs-cs
-
-[hooks]
-pretxncommit.khanlint = $HOME/code/khan/devtools/khan-linter/khanlint.py
-
-[hostfingerprints]
-khanacademy.kilnhg.com = fe:ab:65:89:7c:6f:1a:21:a8:39:54:6c:2a:cb:ca:ae:e9:e5:f0:01
-bitbucket.org = 24:9c:45:8b:9c:aa:ba:55:4e:01:6d:58:ff:e4:28:7d:2a:14:ae:3b
 
 [bookmarks]
 track.current = True

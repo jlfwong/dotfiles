@@ -20,6 +20,7 @@
 --type-set=handlebars=.handlebars
 --type-add=html=.handlebars,.tmpl
 --type-set=jst=.jst
+--type-set=json=.json
 
 ################################################################################
 # Khan Academy specific

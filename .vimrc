@@ -26,10 +26,43 @@ set mouse=a
 filetype off
 
 " Set up Vundle
-" This also includes all of the plugins I use
-"
-" Run :BundleInstall to install all of the plugins
-source ~/.vim/.vundle
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+Bundle 'gmarik/vundle'
+
+" Bundles (plugins)
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'Shougo/neocomplcache'
+Bundle 'Shougo/vimproc'
+Bundle 'digitaltoad/vim-jade'
+Bundle 'godlygeek/tabular'
+Bundle 'groenewege/vim-less'
+Bundle 'hail2u/vim-css3-syntax'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'kien/ctrlp.vim'
+Bundle 'majutsushi/tagbar'
+Bundle 'matthias-guenther/hammer.vim'
+Bundle 'mileszs/ack.vim'
+Bundle 'nono/vim-handlebars'
+Bundle 'phleet/snipmate.vim'
+Bundle 'python_match.vim'
+Bundle 'rphillips/vim-zoomwin'
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'scrooloose/nerdtree'
+Bundle 'sjl/gundo.vim'
+Bundle 'skammer/vim-css-color'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-rails'
+Bundle 'tpope/vim-unimpaired'
+Bundle 'tsaleh/vim-supertab'
+Bundle 'vim-scripts/YankRing.vim'
+Bundle 'vim-scripts/matchit.zip'
+Bundle 'wavded/vim-stylus'
+Bundle '~/dotfiles/.vim/bundle/syntastic.git'
+Bundle '~/dotfiles/.vim/bundle/vim-mercenary.git'
+Bundle '~/dotfiles/.vim/bundle/vim-arcanist.git'
 
 set conceallevel=2
 let g:tex_conceal="admgs"
@@ -150,8 +183,8 @@ nnoremap <Leader>z :ZoomWin<CR>
 nnoremap <Tab> <C-w><C-w>
 nnoremap <S-Tab> <C-w>W
 
-" Mapping tab also remaps C-i, so make C-p do what C-i used to do
-nnoremap <C-p> <C-i>
+" Mapping tab also remaps C-i, so make C-l do what C-i used to do
+nnoremap <C-l> <C-i>
 
 "NERDTree
 map <Leader>n :NERDTreeToggle<CR>
@@ -178,8 +211,7 @@ let g:ctrlp_map = '<Leader>t'
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_clear_cache_on_exit = 1
 nnoremap <leader>b :CtrlPBuffer<CR>
-set wildignore+=*.o,.git,*.jpg,*.png,*.swp,*.d,*.gif,*.pyc,node_modules,*.class,*.crf,*.hg,*.orig,.meteor
-
+set wildignore+=*.o,.git,*.jpg,*.png,*.swp,*.d,*.gif,*.pyc,node_modules,*.class,*.crf,*.hg,*.orig,.meteor,*.acn,*.acr,*.alg,*.aux,*.bbl,*.blg,*.dvi,*.fdb_latexmk,*.glg,*.glo,*.gls,*.idx,*.ilg,*.ind,*.ist,*.lof,*.log,*.lot,*.maf,*.mtc,*.mtc0,*.nav,*.nlo,*.out,*.pdfsync,*.ps,*.snm,*.synctex.gz,*.toc,*.vrb,*.xdy,*.pdf,*.bcf,*.run.xml
 " Yankring
 nnoremap <silent> <leader>y :YRShow<CR>
 
