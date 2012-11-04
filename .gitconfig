@@ -20,6 +20,7 @@
 [alias]
   ci = commit
   lg = log --graph --pretty=format:'%Cred%h%Creset %Creset%Cblue%an%Creset %s %Cgreen(%cr)%Cred%d%Creset' --abbrev-commit --date=relative
+  lga = "!git lg --all"
   amend = commit --amend
   gg = grep -A5 -B5 --color -n
   cp = cherry-pick
