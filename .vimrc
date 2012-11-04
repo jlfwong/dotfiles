@@ -65,7 +65,7 @@ Bundle '~/dotfiles/.vim/bundle/vim-mercenary.git'
 Bundle '~/dotfiles/.vim/bundle/vim-arcanist.git'
 
 set conceallevel=2
-let g:tex_conceal="admgs"
+let g:tex_conceal="admg"
 set autoread
 set autowrite
 set laststatus=2
