@@ -1,0 +1,5 @@
+bind m:ctrl,alt,cmd move 0;0 screenSizeX;screenSizeY
+bind left:ctrl,alt,cmd move 0;0 screenSizeX/2;screenSizeY
+bind right:ctrl,alt,cmd move screenSizeX/2;0 screenSizeX/2;screenSizeY
+bind up:ctrl,alt,cmd move 0;0 screenSizeX;screenSizeY/2
+bind down:ctrl,alt,cmd move 0;screenSizeY/2 screenSizeX;screenSizeY/2

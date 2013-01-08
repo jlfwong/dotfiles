@@ -2,7 +2,7 @@ SHELL := /bin/bash
 
 all: submodules link
 
-link: .vim .vimrc .gvimrc .ackrc .gitconfig .screenrc .ctags .gitignore_global .hgrc .hgext .inputrc
+link: .vim .vimrc .gvimrc .ackrc .gitconfig .screenrc .ctags .gitignore_global .hgrc .hgext .inputrc .slate
 	$(foreach file, $^, ln -s $(CURDIR)/$(file) ~; )
 
 submodules:
