@@ -17,10 +17,11 @@
 --type-set=scss=.scss
 --type-set=less=.less
 --type-set=coffee=.coffee
---type-set=handlebars=.handlebars
---type-add=html=.handlebars,.tmpl
+--type-set=handlebars=.handlebars,.hbs
+--type-add=html=.handlebars,.tmpl,.hbs
 --type-set=jst=.jst
 --type-set=json=.json
+--type-set=styl=.styl
 
 ################################################################################
 # Khan Academy specific
