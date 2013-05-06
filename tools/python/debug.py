@@ -25,3 +25,12 @@ def ipdb_on_error(func):
             traceback.print_exc(file=sys.stdout)
             ipdb.set_trace()
     return ipdbd
+
+def trace(func):
+    @wraps(func)
+    def traced(*args, **kwargs):
+        ret = func(*args, **kwargs)
+        print '%s(*(%s), **(%s)) -> %s' % (func.func_name, args, kwargs, repr(ret))
+        return ret
+
+    return traced
