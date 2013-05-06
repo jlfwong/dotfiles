@@ -21,6 +21,7 @@ hi vimLineComment ctermfg=8 ctermbg=10
 
 let g:syntastic_auto_loc_list=0
 let g:syntastic_enable_signs=1
+let g:syntastic_javascript_checker = "jshint"
 set mouse=a
 
 filetype off
@@ -34,35 +35,39 @@ Bundle 'gmarik/vundle'
 
 " Bundles (plugins)
 Bundle 'Lokaltog/vim-powerline'
-Bundle 'Shougo/neocomplcache'
-Bundle 'Shougo/vimproc'
-Bundle 'digitaltoad/vim-jade'
+
+if v:version < 703 || !has('patch584')
+  Bundle 'tsaleh/vim-supertab'
+else
+  Bundle 'Valloric/YouCompleteMe'
+endif
+
+Bundle 'airblade/vim-gitgutter'
 Bundle 'godlygeek/tabular'
-Bundle 'groenewege/vim-less'
-Bundle 'hail2u/vim-css3-syntax'
-Bundle 'kchmck/vim-coffee-script'
 Bundle 'kien/ctrlp.vim'
 Bundle 'majutsushi/tagbar'
 Bundle 'matthias-guenther/hammer.vim'
 Bundle 'mileszs/ack.vim'
-Bundle 'nono/vim-handlebars'
-Bundle 'phleet/snipmate.vim'
 Bundle 'python_match.vim'
-Bundle 'rphillips/vim-zoomwin'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'scrooloose/nerdtree'
 Bundle 'sjl/gundo.vim'
-Bundle 'skammer/vim-css-color'
 Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-rails'
+Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-unimpaired'
-Bundle 'tsaleh/vim-supertab'
 Bundle 'vim-scripts/YankRing.vim'
 Bundle 'vim-scripts/matchit.zip'
-Bundle 'wavded/vim-stylus'
 Bundle '~/dotfiles/.vim/bundle/syntastic.git'
-Bundle '~/dotfiles/.vim/bundle/vim-mercenary.git'
 Bundle '~/dotfiles/.vim/bundle/vim-arcanist.git'
+Bundle '~/dotfiles/.vim/bundle/vim-mercenary.git'
+
+" Language Support
+Bundle 'digitaltoad/vim-jade'
+Bundle 'groenewege/vim-less'
+Bundle 'hail2u/vim-css3-syntax'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'nono/vim-handlebars'
+Bundle 'scrooloose/nerdtree'
+Bundle 'skammer/vim-css-color'
+Bundle 'wavded/vim-stylus'
 
 set conceallevel=2
 let g:tex_conceal="admg"
