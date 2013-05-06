@@ -37,5 +37,6 @@ export EDITOR=/usr/bin/vim
 
 alias pyserve="python -m SimpleHTTPServer"
 alias g="git"
+alias wiki="cd ~/wiki && SOYWIKI_VIM=mvim soywiki && cd -"
 
 export PATH="$HOME/dotfiles/bin:$PATH"
