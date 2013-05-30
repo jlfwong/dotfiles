@@ -59,3 +59,4 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="/usr/local/share/npm/bin:$PATH"
 
 bindkey -v
+bindkey '^R' history-incremental-search-backward
