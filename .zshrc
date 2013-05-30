@@ -60,3 +60,4 @@ export PATH="/usr/local/share/npm/bin:$PATH"
 
 bindkey -v
 bindkey '^R' history-incremental-search-backward
+bindkey -M vicmd v edit-command-line
