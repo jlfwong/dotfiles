@@ -24,12 +24,4 @@ Plugin Management
 
 I'm using [Vundle][] for plugin management here.
 
-To manage plugins, edit `.vim/.vundle`
-
-To install all the plugins I'm using, boot up vim after
-running `make` and run
-    
-    :BundleInstall
-
-
 [Vundle]: https://github.com/gmarik/vundle
