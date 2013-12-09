@@ -48,7 +48,8 @@ source $ZSH/oh-my-zsh.sh
 
 export PATH="/usr/local/mongodb/bin:$PATH"
 export PATH="/usr/texbin:$PATH"
-export PATH="~/bin:$PATH"
+export PATH="$HOME/bin:$PATH"
+export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 
 export DYLD_LIBRARY_PATH="/usr/local/mysql/lib:$DYLD_LIBRARY_PATH"
@@ -58,6 +59,29 @@ export PATH="$HOME/code/khan/arcanist/khan-bin:$PATH"
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="/usr/local/share/npm/bin:$PATH"
 
+alias wiki="cd ~/wiki && SOYWIKI_VIM=vim soywiki && cd -"
+
 bindkey -v
 bindkey '^R' history-incremental-search-backward
 bindkey -M vicmd v edit-command-line
+
+# Add Phabricator bins to PATH
+export PATH="$HOME/khan/devtools/arcanist/khan-bin:$PATH"
+
+# Activate Python2.7 virtualenv
+source ~/.virtualenv/khan27/bin/activate
+
+function notify {
+  ret=$?
+  if [ $ret -eq 0 ]; then
+    echo -e "\033[1;32m[ DONE ]\033[0m"
+    ( say -v 'Good News' "Done" & )
+  elif [ $status -ne 130 ]; then  # Ignore exit with Ctrl-C
+    echo -e "\033[1;31m[ ERROR $ret ]\033[0m"
+    ( say -v Cellos "Oh noes, exit code $ret" & )
+  fi
+  return $status
+}
+
+source $HOME/.rvm/scripts/rvm
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
