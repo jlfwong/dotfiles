@@ -10,3 +10,6 @@
 [submodule "matcher"]
 	path = matcher
 	url = https://github.com/burke/matcher.git
+[submodule "tmux-MacOSX-pasteboard"]
+	path = tmux-MacOSX-pasteboard
+	url = https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard.git
