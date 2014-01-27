@@ -23,7 +23,6 @@ hi vimLineComment ctermfg=8 ctermbg=10
 
 let g:syntastic_auto_loc_list=0
 let g:syntastic_enable_signs=1
-let g:syntastic_javascript_checker = "jshint"
 set mouse=a
 
 filetype off
@@ -61,9 +60,8 @@ Bundle 'tpope/vim-unimpaired'
 Bundle 'vim-scripts/file-line'
 Bundle 'vim-scripts/matchit.zip'
 Bundle 'scrooloose/nerdtree'
-Bundle '~/dotfiles/.vim/bundle/syntastic.git'
-Bundle '~/dotfiles/.vim/bundle/vim-arcanist.git'
-Bundle '~/dotfiles/.vim/bundle/vim-mercenary.git'
+Bundle 'scrooloose/syntastic'
+Bundle 'phleet/vim-arcanist'
 
 " Language Support
 Bundle 'digitaltoad/vim-jade'
