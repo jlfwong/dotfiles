@@ -50,14 +50,11 @@ Bundle 'airblade/vim-gitgutter'
 Bundle 'godlygeek/tabular'
 Bundle 'kien/ctrlp.vim'
 Bundle 'majutsushi/tagbar'
-Bundle 'matthias-guenther/hammer.vim'
-Bundle 'mileszs/ack.vim'
 Bundle 'python_match.vim'
 Bundle 'sjl/gundo.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-unimpaired'
-Bundle 'vim-scripts/file-line'
 Bundle 'vim-scripts/matchit.zip'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
@@ -160,8 +157,8 @@ nnoremap * :set hlsearch<CR>*<c-o>
 nnoremap <Leader>h :set hlsearch!<CR>
 
 " Easier to type, and I never use the default behavior.
-noremap H ^
-noremap L g_
+nnoremap H ^
+nnoremap L g_
 
 " let [jk] go down and up by display lines instead of real lines. Let g[jk]
 " do what [jk] normally does
@@ -174,47 +171,31 @@ nnoremap gj j
 nnoremap <Leader>gg :GitGrep<space>
 vnoremap <Leader>gg "gy:GitGrep <C-R>g<CR>
 
-" Folding
-" Toggle fold
-nnoremap <Space> za
-set foldtext=getline(v:foldstart)
-
 " Sort
 " Select a block of text in visual mode then hit ,s
 vnoremap <Leader>s :sort<CR>
 
-"Map Semicolon to : for faster command execution
+" Map Semicolon to : for faster command execution
 nmap ; :
 
-"Zoom
-nnoremap <Leader>z :ZoomWin<CR>
-
-"<Tab> and <S-Tab> switch between split screens
+" <Tab> and <S-Tab> switch between split screens
 nnoremap <Tab> <C-w><C-w>
 nnoremap <S-Tab> <C-w>W
 
 " Mapping tab also remaps C-i, so make C-l do what C-i used to do
 nnoremap <C-l> <C-i>
 
-"NERDTree
+" NERDTree
 map <Leader>n :NERDTreeToggle<CR>
 
-"NERDCommenter
-let g:NERDCreateDefaultMappings = 0
-map <Leader>// <plug>NERDCommenterAlignLeft
-map <Leader>/, <plug>NERDCommenterUncomment
-
-"Gundo
+" Gundo
 nmap <Leader>u :GundoToggle<CR>
 
-"Make
+" Make
 nmap <Leader>m :make<CR>
 
 ",p copies the current filepath
 nmap <Leader>p :!echo % \| pbcopy<CR><CR>
-
-" Tabularize
-vmap <Leader>t :Tabularize /
 
 " CtrlP
 let g:ctrlp_map = '<Leader>t'
@@ -253,20 +234,6 @@ set completeopt=longest,menuone
 set omnifunc=syntaxcomplete#Complete
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-
-" Neocomplcache
-" Disable AutoComplPop.
-let g:acp_enableAtStartup = 0
-" Use neocomplcache.
-let g:neocomplcache_enable_at_startup = 1
-" Use smartcase.
-let g:neocomplcache_enable_smart_case = 1
-" Use camel case completion.
-let g:neocomplcache_enable_camel_case_completion = 1
-" Use underbar completion.
-let g:neocomplcache_enable_underbar_completion = 1
-" Set minimum syntax keyword length.
-let g:neocomplcache_min_syntax_length = 3
 
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
