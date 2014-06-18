@@ -69,7 +69,9 @@ bindkey -M vicmd v edit-command-line
 export PATH="$HOME/khan/devtools/arcanist/khan-bin:$PATH"
 
 # Activate Python2.7 virtualenv
-source ~/.virtualenv/khan27/bin/activate
+if [ -d "$HOME/.virtualenv/khan27" ]; then
+    source $HOME/.virtualenv/khan27/bin/activate
+fi
 
 function notify {
   ret=$?
@@ -83,5 +85,7 @@ function notify {
   return $status
 }
 
-source $HOME/.rvm/scripts/rvm
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+if [ -d "$HOME/.rvm" ]; then
+    source $HOME/.rvm/scripts/rvm
+    PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+fi
