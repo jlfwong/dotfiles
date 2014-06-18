@@ -35,6 +35,7 @@
   sync = "!f() { branch=$(git name-rev --name-only HEAD); echo Syncing $branch with master && git checkout master && git pull --ff-only && git checkout $branch && git rebase master; }; f"
   outgoing = log origin/master..HEAD
   incoming = "!git fetch $1; git log HEAD..$1/master"
+  su = submodule update --init --recursive
 
 [core]
   editor = /usr/bin/vim
@@ -42,6 +43,7 @@
 
 [merge]
   tool = vimdiff
+  stat = true
 
 [diff]
   # Use mnemonic prefixes (index, work tree, commit, object) instead of the standard a and b notation
@@ -52,3 +54,13 @@
 
 [difftool]
   prompt = false
+
+[push]
+  default = simple
+
+[branch]
+  # autosetupmerge auto-adds the --track flag to each git branch,
+  # which is helpful for arc (part of Phabricator).  autosetuprebase
+  # means that instead of merging it will rebase.  Weird you need both!
+  autosetupmerge = always
+  autosetuprebase = always
