@@ -211,7 +211,7 @@ nmap <Leader>u :GundoToggle<CR>
 nmap <Leader>m :make<CR>
 
 ",p copies the current filepath
-nmap <Leader>p :!echo `pwd`/% \| pbcopy<CR><CR>
+nmap <Leader>p :!echo % \| pbcopy<CR><CR>
 
 " Tabularize
 vmap <Leader>t :Tabularize /
