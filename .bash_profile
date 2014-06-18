@@ -1,6 +1,5 @@
 set -o vi
 
-source ~/dotfiles/autojmp.bash
 source ~/dotfiles/git-completion.bash
 source ~/dotfiles/hg-completion.bash
 
@@ -39,4 +38,6 @@ alias pyserve="python -m SimpleHTTPServer"
 alias g="git"
 alias wiki="cd ~/wiki && SOYWIKI_VIM=mvim soywiki && cd -"
 
+export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/dotfiles/bin:$PATH"
+export PATH=/usr/local/sbin:$PATH
