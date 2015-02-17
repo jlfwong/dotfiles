@@ -40,7 +40,7 @@ ZSH_THEME="phleet"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git zsh-syntax-highlighting)
+plugins=(gitfast zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -67,6 +67,12 @@ bindkey -M vicmd v edit-command-line
 
 # Add Phabricator bins to PATH
 export PATH="$HOME/khan/devtools/arcanist/khan-bin:$PATH"
+
+# Add Google App Enginer frankenserver to PATH
+export PATH="$HOME/khan/webapp/third_party/frankenserver:$PATH"
+
+# Add dotfiles scripts to PATH
+export PATH="$HOME/khan/devtools/khan-dotfiles/bin:$PATH"
 
 # Activate Python2.7 virtualenv
 if [ -d "$HOME/.virtualenv/khan27" ]; then

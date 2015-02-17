@@ -2,6 +2,9 @@
   name = Jamie Wong
   email = jamie.lf.wong@gmail.com
 
+[include]
+  path = .gitconfig.khan
+
 [color]
   branch = auto
   diff = auto
@@ -24,7 +27,6 @@
   amend = commit --amend
   gg = grep -A5 -B5 --color -n
   cp = cherry-pick
-  co = checkout
   f = fetch
   ire = rebase -i
   s = status
@@ -32,7 +34,8 @@
   dw = diff --ignore-space-change
   pd = diff --patience
   pr = pull --rebase
-  sync = "!f() { branch=$(git name-rev --name-only HEAD); echo Syncing $branch with master && git checkout master && git pull --ff-only && git checkout $branch && git rebase master; }; f"
+  wip = commit -m 'wip'
+  sync = "!f() { branch=$(git name-rev --name-only HEAD); echo Syncing $branch with master && git checkout master && git pull --ff-only && git checkout $branch && git rebase master && git submodule update --init --recursive; }; f"
   outgoing = log origin/master..HEAD
   incoming = "!git fetch $1; git log HEAD..$1/master"
   su = submodule update --init --recursive
@@ -64,3 +67,6 @@
   # means that instead of merging it will rebase.  Weird you need both!
   autosetupmerge = always
   autosetuprebase = always
+
+[grep]
+  extendRegexp = true

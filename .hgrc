@@ -69,3 +69,5 @@ git = True
 
 [bookmarks]
 track.current = True
+
+%include .hgrc.khan
