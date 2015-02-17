@@ -5,7 +5,7 @@ function! s:GitGrep(query)
     let grepprg_bak=&grepprg
     let grepformat_bak=&grepformat
     try
-        let &grepprg="git grep -n \"$*\""
+        let &grepprg="git grep -n $*"
         let &grepformat="%f:%l:%m"
         silent execute "grep! " . a:query
     finally

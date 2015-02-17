@@ -40,7 +40,7 @@ Bundle 'gmarik/vundle'
 " Bundles (plugins)
 Bundle 'Lokaltog/vim-powerline'
 
-if v:version < 703 || !has('patch584')
+if v:version < 703 || v:version == 703 && !has('patch584')
   Bundle 'tsaleh/vim-supertab'
 else
   Bundle 'Valloric/YouCompleteMe'
@@ -150,11 +150,18 @@ set statusline+=)
 " Line and column position and counts.
 set statusline+=\ (L%l\/%L,\ C%03c)
 
+" Disable ex mode shortcut
+nnoremap Q q
+
 " Don't move on *, but turn on hlsearch
 nnoremap * :set hlsearch<CR>*<c-o>
 
 " Toggle hlsearch
 nnoremap <Leader>h :set hlsearch!<CR>
+
+" Navigating by jumps
+nnoremap <C-H> <C-O>
+nnoremap <C-L> <C-I>
 
 " Easier to type, and I never use the default behavior.
 nnoremap H ^
@@ -169,7 +176,7 @@ nnoremap gj j
 
 " Git Grep
 nnoremap <Leader>gg :GitGrep<space>
-vnoremap <Leader>gg "gy:GitGrep <C-R>g<CR>
+vnoremap <Leader>gg "gy:GitGrep "<C-R>g"<CR>
 
 " Sort
 " Select a block of text in visual mode then hit ,s
@@ -195,7 +202,7 @@ nmap <Leader>u :GundoToggle<CR>
 nmap <Leader>m :make<CR>
 
 ",p copies the current filepath
-nmap <Leader>p :!echo % \| pbcopy<CR><CR>
+nmap <Leader>p :!echo % \| tr -d '\n' \| pbcopy<CR><CR>
 
 " CtrlP
 let g:ctrlp_map = '<Leader>t'
@@ -263,6 +270,22 @@ if has("gui_running")
   set guioptions=egt
   let g:Powerline_symbols = 'fancy'
 endif
+
+" Qdo is the equivalent of argdo but for the quickfix list
+command! -nargs=0 -bar Qargs execute 'args ' . QuickfixFilenames()
+
+" Contributed by "ib."
+" http://stackoverflow.com/questions/5686206/search-replace-using-quickfix-list-in-vim#comment8286582_5686810
+command! -nargs=1 -complete=command -bang Qdo exe 'args '.QuickfixFilenames() | argdo<bang> <args>
+
+function! QuickfixFilenames()
+  " Building a hash ensures we get each buffer only once
+  let buffer_numbers = {}
+  for quickfix_item in getqflist()
+    let buffer_numbers[quickfix_item['bufnr']] = bufname(quickfix_item['bufnr'])
+  endfor
+  return join(map(values(buffer_numbers), 'fnameescape(v:val)'))
+endfunction
 
 "LANGUAGE SPECIFIC COMMANDS
 "
