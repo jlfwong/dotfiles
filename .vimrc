@@ -4,7 +4,7 @@ set encoding=utf-8
 
 set t_Co=16
 set background=dark
-colorscheme solarized
+let base16colorspace=256
 " Change folding colors
 hi link Folded Statement
 hi link FoldColumn Statement
@@ -18,8 +18,8 @@ hi link diffLine Comment
 " I have no idea why this is necessary - for some reason,
 " ctermbg and ctermfg are being swapped *only* for Comment and
 " vimLineComment
-hi Comment ctermfg=8 ctermbg=10
-hi vimLineComment ctermfg=8 ctermbg=10
+" hi Comment ctermfg=8 ctermbg=10
+" hi vimLineComment ctermfg=8 ctermbg=10
 
 let g:syntastic_auto_loc_list=0
 let g:syntastic_enable_signs=1
@@ -70,6 +70,11 @@ Bundle 'skammer/vim-css-color'
 Bundle 'derekwyatt/vim-scala'
 Bundle 'wavded/vim-stylus'
 Bundle 'pangloss/vim-javascript'
+
+" Color Schemes
+Bundle 'chriskempson/base16-vim'
+
+colorscheme base16-ocean
 
 set conceallevel=2
 let g:tex_conceal="admg"
@@ -177,6 +182,7 @@ nnoremap gj j
 " Git Grep
 nnoremap <Leader>gg :GitGrep<space>
 vnoremap <Leader>gg "gy:GitGrep "<C-R>g"<CR>
+vnoremap <Leader>gr "gy:GitGrep "<C-R>g"<CR>:Qdo %s/<C-R>g/
 
 " Sort
 " Select a block of text in visual mode then hit ,s
