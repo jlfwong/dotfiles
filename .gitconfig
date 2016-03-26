@@ -2,9 +2,6 @@
   name = Jamie Wong
   email = jamie.lf.wong@gmail.com
 
-[include]
-  path = .gitconfig.khan
-
 [color]
   branch = auto
   diff = auto

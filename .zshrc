@@ -58,7 +58,6 @@ export PATH="/usr/local/sbin:$PATH"
 export DYLD_LIBRARY_PATH="/usr/local/mysql/lib:$DYLD_LIBRARY_PATH"
 
 export PATH="/usr/local/bin:/Developer/usr/bin:/usr/local/git/bin/:$PATH"
-export PATH="$HOME/code/khan/arcanist/khan-bin:$PATH"
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="/usr/local/share/npm/bin:$PATH"
 
@@ -67,20 +66,6 @@ alias wiki="cd ~/wiki && SOYWIKI_VIM=vim soywiki && cd -"
 bindkey -v
 bindkey '^R' history-incremental-search-backward
 bindkey -M vicmd v edit-command-line
-
-# Add Phabricator bins to PATH
-export PATH="$HOME/khan/devtools/arcanist/khan-bin:$PATH"
-
-# Add Google App Enginer frankenserver to PATH
-export PATH="$HOME/khan/webapp/third_party/frankenserver:$PATH"
-
-# Add dotfiles scripts to PATH
-export PATH="$HOME/khan/devtools/khan-dotfiles/bin:$PATH"
-
-# Activate Python2.7 virtualenv
-if [ -d "$HOME/.virtualenv/khan27" ]; then
-    source $HOME/.virtualenv/khan27/bin/activate
-fi
 
 function notify {
   ret=$?

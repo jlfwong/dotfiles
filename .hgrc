@@ -4,7 +4,7 @@ attend = annotate, cat, diff, export, glog, log, qdiff, slog, dlog, gslog, sglog
 # note: this can be temporarily disabled with --pager=off
 
 [ui]
-username = Jamie Wong <jamiewong@khanacademy.org>
+username = Jamie Wong <jamie.lf.wong@gmail.com>
 ignore = ~/dotfiles/.hgignore_global
 
 [extensions]
@@ -24,8 +24,6 @@ hgext.shelve = ~/.hgext/hgshelve.py
 hgext.collapse = ~/.hgext/collapse.py
 hgext.crecord = ~/.hgext/crecord/
 hgext.remotebranches = ~/.hgext/hg_remotebranches.py
-rdiff = $HOME/code/khan/devtools/mercurial-extensions-rdiff/rdiff.py
-kilnauth = $HOME/code/khan/devtools/kilnauth.py
 prompt = $HOME/dotfiles/hg-prompt/prompt.py
 
 [alias]
@@ -69,5 +67,3 @@ git = True
 
 [bookmarks]
 track.current = True
-
-%include .hgrc.khan
