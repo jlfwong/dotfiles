@@ -47,8 +47,6 @@ else
 endif
 
 Bundle 'airblade/vim-gitgutter'
-Bundle 'godlygeek/tabular'
-Bundle 'kien/ctrlp.vim'
 Bundle 'majutsushi/tagbar'
 Bundle 'python_match.vim'
 Bundle 'sjl/gundo.vim'
@@ -61,15 +59,13 @@ Bundle 'scrooloose/syntastic'
 Bundle 'phleet/vim-arcanist'
 
 " Language Support
-Bundle 'digitaltoad/vim-jade'
 Bundle 'groenewege/vim-less'
 Bundle 'hail2u/vim-css3-syntax'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'nono/vim-handlebars'
 Bundle 'skammer/vim-css-color'
 Bundle 'derekwyatt/vim-scala'
-Bundle 'wavded/vim-stylus'
 Bundle 'pangloss/vim-javascript'
+Bundle 'junegunn/fzf'
+Bundle 'junegunn/fzf.vim'
 
 " Color Schemes
 Bundle 'chriskempson/base16-vim'
@@ -210,37 +206,10 @@ nmap <Leader>m :make<CR>
 ",p copies the current filepath
 nmap <Leader>p :!echo % \| tr -d '\n' \| pbcopy<CR><CR>
 
-" CtrlP
-let g:ctrlp_map = '<Leader>t'
-let g:ctrlp_working_path_mode = 0
-let g:ctrlp_clear_cache_on_exit = 1
-nnoremap <leader>b :CtrlPBuffer<CR>
-set wildignore+=*.o,.git,*.jpg,*.png,*.swp,*.d,*.gif,*.pyc,node_modules,*.class,*.crf,*.hg,*.orig,.meteor,*.acn,*.acr,*.alg,*.aux,*.bbl,*.blg,*.dvi,*.fdb_latexmk,*.glg,*.glo,*.gls,*.idx,*.ilg,*.ind,*.ist,*.lof,*.log,*.lot,*.maf,*.mtc,*.mtc0,*.nav,*.nlo,*.out,*.pdfsync,*.ps,*.snm,*.synctex.gz,*.toc,*.vrb,*.xdy,*.pdf,*.bcf,*.run.xml
-
-let g:path_to_matcher = '~/dotfiles/matcher/matcher'
-let g:ctrlp_user_command = ['.git/', 'cd %s && git ls-files . -co --exclude-standard']
-let g:ctrlp_match_func = { 'match': 'GoodMatch' }
-function! GoodMatch(items, str, limit, mmode, ispath, crfile, regex)
-  " Create a cache file if not yet exists
-  let cachefile = ctrlp#utils#cachedir().'/matcher.cache'
-  if !( filereadable(cachefile) && a:items == readfile(cachefile) )
-    call writefile(a:items, cachefile)
-  endif
-  if !filereadable(cachefile)
-    return []
-  endif
-
-  " a:mmode is currently ignored. In the future, we should probably do
-  " something about that. the matcher behaves like "full-line".
-  let cmd = g:path_to_matcher.' --limit '.a:limit.' --manifest '.cachefile.' '
-  if !( exists('g:ctrlp_dotfiles') && g:ctrlp_dotfiles )
-    let cmd = cmd.'--no-dotfiles '
-  endif
-  let cmd = cmd.a:str
-
-  return split(system(cmd), "\n")
-
-endfunction
+" FZF
+nmap <Leader>f :Files<CR>
+nmap <Leader>b :Buffers<CR>
+nmap <Leader>t :Tags<CR>
 
 " OmniCompletion
 set completeopt=longest,menuone

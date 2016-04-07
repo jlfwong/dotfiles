@@ -7,9 +7,6 @@
 [submodule ".oh-my-zsh"]
 	path = .oh-my-zsh
 	url = git@github.com:phleet/oh-my-zsh.git
-[submodule "matcher"]
-	path = matcher
-	url = https://github.com/burke/matcher.git
 [submodule "base16-shell"]
 	path = base16-shell
 	url = https://github.com/chriskempson/base16-shell
