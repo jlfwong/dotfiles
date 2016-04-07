@@ -10,12 +10,6 @@
 [submodule "matcher"]
 	path = matcher
 	url = https://github.com/burke/matcher.git
-[submodule "tmux-MacOSX-pasteboard"]
-	path = tmux-MacOSX-pasteboard
-	url = https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard.git
-[submodule ".fzf"]
-	path = .fzf
-	url = https://github.com/junegunn/fzf.git
 [submodule "base16-shell"]
 	path = base16-shell
 	url = https://github.com/chriskempson/base16-shell

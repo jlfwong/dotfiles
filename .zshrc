@@ -83,4 +83,5 @@ if [ -d "$HOME/.rvm" ]; then
     source $HOME/.rvm/scripts/rvm
     PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 fi
-source ~/.fzf.zsh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

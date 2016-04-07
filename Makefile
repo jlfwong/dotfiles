@@ -1,12 +1,15 @@
 SHELL := /bin/bash
 
-all: submodules matcher-build reattach-to-user-namespace-build link bundleinstall fzfinstall
+all: submodules matcher-build reattach-to-user-namespace-build link bundleinstall brewinstall
 
 matcher-build:
 	cd matcher; make
 
+brewinstall:
+	brew install reattach-to-user-namespace tmux zsh fzf
+
 fzfinstall:
-	source ~/.fzf/install
+	brew install fzf
 
 reattach-to-user-namespace-build:
 	# TODO(jlfwong): Bail out on non-osx?
