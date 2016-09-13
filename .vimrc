@@ -56,7 +56,6 @@ Bundle 'tpope/vim-unimpaired'
 Bundle 'vim-scripts/matchit.zip'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
-Bundle 'phleet/vim-arcanist'
 
 " Language Support
 Bundle 'groenewege/vim-less'
