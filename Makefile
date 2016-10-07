@@ -3,7 +3,7 @@ SHELL := /bin/bash
 all: submodules link bundleinstall brewinstall
 
 brewinstall:
-	brew install tmux zsh fzf
+	brew install tmux zsh fzf ripgrep
 
 fzfinstall:
 	brew install fzf
@@ -16,3 +16,7 @@ bundleinstall:
 
 submodules:
 	git submodule update --init --recursive
+
+# NOTE: This is intentionally not included as part of all:
+casks:
+	brew cask install spotify dropbox spectacle karabiner flux iterm2 google-chrome

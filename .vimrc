@@ -44,6 +44,13 @@ if v:version < 703 || v:version == 703 && !has('patch584')
   Bundle 'tsaleh/vim-supertab'
 else
   Bundle 'Valloric/YouCompleteMe'
+
+  "YCM specific bindings
+  nnoremap <C-G><C-G> :YcmCompleter GoTo<CR>
+  nnoremap <C-G>g :YcmCompleter GoTo<CR>
+  nnoremap <C-G>d :YcmCompleter GoToDeclaration<CR>
+  nnoremap <C-G>f :YcmCompleter GoToDefinition<CR>
+  nnoremap <C-G>t :YcmCompleter GetType<CR>
 endif
 
 Bundle 'airblade/vim-gitgutter'
@@ -56,6 +63,9 @@ Bundle 'tpope/vim-unimpaired'
 Bundle 'vim-scripts/matchit.zip'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
+let $FZF_DEFAULT_COMMAND = 'rg --files'
+Bundle 'junegunn/fzf'
+Bundle 'junegunn/fzf.vim'
 
 " Language Support
 Bundle 'groenewege/vim-less'
@@ -63,8 +73,7 @@ Bundle 'hail2u/vim-css3-syntax'
 Bundle 'skammer/vim-css-color'
 Bundle 'derekwyatt/vim-scala'
 Bundle 'pangloss/vim-javascript'
-Bundle 'junegunn/fzf'
-Bundle 'junegunn/fzf.vim'
+Bundle 'leafgarland/typescript-vim'
 
 " Color Schemes
 Bundle 'chriskempson/base16-vim'
