@@ -21,8 +21,6 @@ hi link diffLine Comment
 " hi Comment ctermfg=8 ctermbg=10
 " hi vimLineComment ctermfg=8 ctermbg=10
 
-let g:syntastic_auto_loc_list=0
-let g:syntastic_enable_signs=1
 set mouse=a
 
 filetype off
@@ -43,6 +41,7 @@ Bundle 'Lokaltog/vim-powerline'
 if v:version < 703 || v:version == 703 && !has('patch584')
   Bundle 'tsaleh/vim-supertab'
 else
+  let g:ycm_confirm_extra_conf = 0
   Bundle 'Valloric/YouCompleteMe'
 
   "YCM specific bindings
@@ -60,9 +59,10 @@ Bundle 'sjl/gundo.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-unimpaired'
+Bundle 'tpope/vim-dispatch'
 Bundle 'vim-scripts/matchit.zip'
-Bundle 'scrooloose/nerdtree'
-Bundle 'scrooloose/syntastic'
+Bundle 'albfan/nerdtree'
+Bundle 'albfan/nerdtree-git-plugin'
 let $FZF_DEFAULT_COMMAND = 'rg --files'
 Bundle 'junegunn/fzf'
 Bundle 'junegunn/fzf.vim'
@@ -73,7 +73,7 @@ Bundle 'hail2u/vim-css3-syntax'
 Bundle 'skammer/vim-css-color'
 Bundle 'derekwyatt/vim-scala'
 Bundle 'pangloss/vim-javascript'
-Bundle 'leafgarland/typescript-vim'
+Bundle 'jlfwong/typescript-vim'
 
 " Color Schemes
 Bundle 'chriskempson/base16-vim'
@@ -146,7 +146,6 @@ set statusline+=%w   " Preview window flag.
 set statusline+=\    " Space.
 
 set statusline+=%#redbar#                " Highlight the following as a warning.
-set statusline+=%{SyntasticStatuslineFlag()} " Syntastic errors.
 set statusline+=%*                           " Reset highlighting.
 
 set statusline+=%=   " Right align.
@@ -209,7 +208,7 @@ map <Leader>n :NERDTreeToggle<CR>
 nmap <Leader>u :GundoToggle<CR>
 
 " Make
-nmap <Leader>m :make<CR>
+nmap <Leader>m :Make<CR>
 
 ",p copies the current filepath
 nmap <Leader>p :!echo % \| tr -d '\n' \| pbcopy<CR><CR>
