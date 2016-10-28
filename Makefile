@@ -13,6 +13,7 @@ link: .vim .vimrc .gvimrc .ackrc .gitconfig .screenrc .ctags .gitignore_global .
 
 bundleinstall:
 	vim +BundleInstall +qall
+	cd ~/.vim/bundle/YouCompleteMe/ && ./install.py --clang-completer
 
 submodules:
 	git submodule update --init --recursive
