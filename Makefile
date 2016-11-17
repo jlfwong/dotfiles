@@ -3,7 +3,7 @@ SHELL := /bin/bash
 all: submodules link bundleinstall brewinstall fzfinstall
 
 brewinstall:
-	brew install tmux zsh fzf ripgrep
+	brew install tmux zsh fzf ripgrep hub
 
 fzfinstall:
 	/usr/local/opt/fzf/install --key-bindings --completion --no-update-rc

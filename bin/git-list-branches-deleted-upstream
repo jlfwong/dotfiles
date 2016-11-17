@@ -1,0 +1,4 @@
+#!/bin/sh
+# List which branches had their upstreams deleted
+git remote prune origin
+git branch -vv | grep ': gone'

@@ -79,6 +79,11 @@ function notify {
   return $status
 }
 
+function pr {
+  git push -u origin "$(git rev-parse --abbrev-ref HEAD)"
+  hub compare
+}
+
 if [ -d "$HOME/.rvm" ]; then
     source $HOME/.rvm/scripts/rvm
     PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
