@@ -21,3 +21,4 @@ submodules:
 # NOTE: This is intentionally not included as part of all:
 casks:
 	brew cask install spotify dropbox spectacle karabiner flux iterm2 google-chrome
+	source karabiner.sh
