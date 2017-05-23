@@ -1,0 +1,21 @@
+let mapleader=","
+let maplocalleader=","
+
+nmap <Leader>f :action GotoFile<CR>
+nmap <Leader>t :action GotoSymbol<CR>
+
+nnoremap <C-G><C-G> :action GotoDeclaration<CR>
+nnoremap <C-G>g :action GoToDeclaration<CR>
+
+nnoremap <Tab> :action NextSplitter<CR>
+nnoremap <S-Tab> :action PrevSplitter<CR>
+
+nnoremap <C-H> :action Back<CR>
+nnoremap <C-L> :action Forward<CR>
+
+" Easier to type, and I never use the default behavior.
+nnoremap H ^
+nnoremap L g_
+
+" Map Semicolon to : for faster command execution
+nmap ; :

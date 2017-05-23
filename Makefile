@@ -8,7 +8,7 @@ brewinstall:
 fzfinstall:
 	/usr/local/opt/fzf/install --key-bindings --completion --no-update-rc
 
-link: .vim .vimrc .gvimrc .ackrc .gitconfig .screenrc .ctags .gitignore_global .hgrc .hgext .inputrc .tmux.conf .zshrc .bash_profile .oh-my-zsh
+link: .vim .vimrc .gvimrc .ideavimrc .ackrc .gitconfig .screenrc .ctags .gitignore_global .hgrc .hgext .inputrc .tmux.conf .zshrc .bash_profile .oh-my-zsh
 	-$(foreach file, $^, ln -s $(CURDIR)/$(file) ~; )
 
 bundleinstall:
