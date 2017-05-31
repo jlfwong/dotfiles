@@ -1,6 +1,9 @@
+// Place your settings in this file to overwrite the default settings
 {
     "editor.tabSize": 2,
     "files.trimTrailingWhitespace": true,
+    "editor.formatOnType": true,
+    "files.autoSave": "onFocusChange",
     "files.exclude": {
         "css": true,
         "ejs": true,
@@ -76,27 +79,27 @@
             ]
         },
         {
-            "before": ["<Tab>"],
+            "before": ["<tab>"],
             "after": [],
             "commands": [
                 {
-                    "command": "workbench.action.focusNextGroup",
+                    "command": "workbench.action.navigateEditorGroups",
                     "args": []
                 }
             ]
         },
         {
-            "before": ["<S-Tab>"],
+            "before": ["shift+tab"],
             "after": [],
             "commands": [
                 {
-                    "command": "workbench.action.focusPreviousGroup",
+                    "command": "workbench.action.navigateRight",
                     "args": []
                 }
             ]
         },
         {
-            "before": ["<C-H>"],
+            "before": ["<C-h>"],
             "after": [],
             "commands": [
                 {
@@ -105,11 +108,20 @@
             ]
         },
         {
-            "before": ["<C-L>"],
+            "before": ["<C-l>"],
             "after": [],
             "commands": [
                 {
                     "command": "workbench.action.navigateForward"
+                }
+            ]
+        },
+        {
+            "before": ["leader", "n"],
+            "after": [],
+            "commands": [
+                {
+                    "command": "workbench.action.toggleSidebarVisibility"
                 }
             ]
         },
@@ -122,8 +134,10 @@
             "after": ["g", "_"]
         },
         {
-            "before": [":"],
-            "after": [";"]
+            "before": [";"],
+            "after": [":"]
         }
-    ]
+    ],
+    "vim.disableAnnoyingNeovimMessage": true,
+    "typescript.check.tscVersion": false
 }
