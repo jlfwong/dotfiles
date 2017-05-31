@@ -1,0 +1,129 @@
+{
+    "editor.tabSize": 2,
+    "files.trimTrailingWhitespace": true,
+    "files.exclude": {
+        "css": true,
+        "ejs": true,
+        "legacy": true,
+        "node_modules": true,
+        "**/.DS_Store": true
+    },
+    "css.validate": false,
+    "workbench.editor.showTabs": false,
+    "vim.useSystemClipboard": true,
+    "vim.useCtrlKeys": true,
+    "vim.leader": ",",
+    "vim.visualstar": true,
+    "vim.otherModesKeyBindingsNonRecursive": [
+        {
+            "before": ["leader", "f"],
+            "after": [],
+            "commands": [
+                {
+                    "command": "workbench.action.quickOpen",
+                    "args": []
+                }
+            ]
+        },
+        {
+            "before": ["leader", "t"],
+            "after": [],
+            "commands": [
+                {
+                    "command": "workbench.action.gotoSymbol",
+                    "args": []
+                }
+            ]
+        },
+        {
+            "before": ["leader", "g", "g"],
+            "after": [],
+            "commands": [
+                {
+                    "command": "workbench.view.search",
+                    "args": []
+                }
+            ]
+        },
+        {
+            "before": ["<C-g>", "<C-g>"],
+            "after": [],
+            "commands": [
+                {
+                    "command": "editor.action.goToDeclaration",
+                    "args": []
+                }
+            ]
+        },
+        {
+            "before": ["<C-g>", "g"],
+            "after": [],
+            "commands": [
+                {
+                    "command": "editor.action.goToDeclaration",
+                    "args": []
+                }
+            ]
+        },
+        {
+            "before": ["<C-g>", "u"],
+            "after": [],
+            "commands": [
+                {
+                    "command": "editor.action.referenceSearch.trigger",
+                    "args": []
+                }
+            ]
+        },
+        {
+            "before": ["<Tab>"],
+            "after": [],
+            "commands": [
+                {
+                    "command": "workbench.action.focusNextGroup",
+                    "args": []
+                }
+            ]
+        },
+        {
+            "before": ["<S-Tab>"],
+            "after": [],
+            "commands": [
+                {
+                    "command": "workbench.action.focusPreviousGroup",
+                    "args": []
+                }
+            ]
+        },
+        {
+            "before": ["<C-H>"],
+            "after": [],
+            "commands": [
+                {
+                    "command": "workbench.action.navigateBack"
+                }
+            ]
+        },
+        {
+            "before": ["<C-L>"],
+            "after": [],
+            "commands": [
+                {
+                    "command": "workbench.action.navigateForward"
+                }
+            ]
+        },
+        {
+            "before": ["H"],
+            "after": ["^"]
+        },
+        {
+            "before": ["L"],
+            "after": ["g", "_"]
+        },
+        {
+            "before": [":"],
+            "after": [";"]
+        }
+    ]
+}
