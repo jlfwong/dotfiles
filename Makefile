@@ -14,6 +14,8 @@ link: .vim .vimrc .gvimrc .ideavimrc .ackrc .gitconfig .screenrc .ctags .gitigno
 linkvscode:
 	rm -rf "/Users/jlfwong/Library/Application Support/Code/User/settings.json"
 	ln -s $(CURDIR)/vscode_settings.json "/Users/jlfwong/Library/Application Support/Code/User/settings.json"
+	rm -rf "/Users/jlfwong/Library/Application Support/Code/User/keybindings.json"
+	ln -s $(CURDIR)/vscode_keybindings.json "/Users/jlfwong/Library/Application Support/Code/User/keybindings.json"
 
 bundleinstall:
 	vim +BundleInstall +qall

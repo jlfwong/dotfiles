@@ -1,0 +1,8 @@
+// Place your key bindings in this file to overwrite the defaults
+[
+  { "key": "ctrl+h", "command": "workbench.action.navigateBack" },
+  { "key": "ctrl+l", "command": "workbench.action.navigateForward" },
+  { "key": "ctrl+g ctrl+g", "command": "editor.action.goToDeclaration" },
+  { "key": "ctrl+g g", "command": "editor.action.goToDeclaration" },
+  { "key": "ctrl+g u", "command": "editor.action.referenceSearch.trigger" }
+]

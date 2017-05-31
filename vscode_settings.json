@@ -1,13 +1,11 @@
 // Place your settings in this file to overwrite the default settings
 {
+    "workbench.activityBar.visible": false,
     "editor.tabSize": 2,
     "files.trimTrailingWhitespace": true,
     "editor.formatOnType": true,
     "files.autoSave": "onFocusChange",
     "files.exclude": {
-        "css": true,
-        "ejs": true,
-        "legacy": true,
         "node_modules": true,
         "**/.DS_Store": true
     },
@@ -17,7 +15,15 @@
     "vim.useCtrlKeys": true,
     "vim.leader": ",",
     "vim.visualstar": true,
+    "vim.handleKeys": {
+        "ctrl+h": false
+    },
     "vim.otherModesKeyBindingsNonRecursive": [
+        {
+            "before": ["leader", "h"],
+            "after": [],
+            "commands": ":set hlsearch"
+        },
         {
             "before": ["leader", "f"],
             "after": [],
@@ -49,36 +55,6 @@
             ]
         },
         {
-            "before": ["<C-g>", "<C-g>"],
-            "after": [],
-            "commands": [
-                {
-                    "command": "editor.action.goToDeclaration",
-                    "args": []
-                }
-            ]
-        },
-        {
-            "before": ["<C-g>", "g"],
-            "after": [],
-            "commands": [
-                {
-                    "command": "editor.action.goToDeclaration",
-                    "args": []
-                }
-            ]
-        },
-        {
-            "before": ["<C-g>", "u"],
-            "after": [],
-            "commands": [
-                {
-                    "command": "editor.action.referenceSearch.trigger",
-                    "args": []
-                }
-            ]
-        },
-        {
             "before": ["<tab>"],
             "after": [],
             "commands": [
@@ -93,26 +69,8 @@
             "after": [],
             "commands": [
                 {
-                    "command": "workbench.action.navigateRight",
+                    "command": "workbench.action.navigateLeft",
                     "args": []
-                }
-            ]
-        },
-        {
-            "before": ["<C-h>"],
-            "after": [],
-            "commands": [
-                {
-                    "command": "workbench.action.navigateBack"
-                }
-            ]
-        },
-        {
-            "before": ["<C-l>"],
-            "after": [],
-            "commands": [
-                {
-                    "command": "workbench.action.navigateForward"
                 }
             ]
         },
@@ -139,5 +97,7 @@
         }
     ],
     "vim.disableAnnoyingNeovimMessage": true,
-    "typescript.check.tscVersion": false
+    "typescript.check.tscVersion": false,
+    "workbench.statusBar.visible": true,
+    "workbench.activityBar.visible": false
 }
