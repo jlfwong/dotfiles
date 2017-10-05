@@ -3,12 +3,12 @@ SHELL := /bin/bash
 all: submodules link bundleinstall brewinstall fzfinstall
 
 brewinstall:
-	brew install tmux zsh fzf ripgrep hub
+	brew install tmux zsh fzf ripgrep hub reattach-to-user-namespace
 
 fzfinstall:
 	/usr/local/opt/fzf/install --key-bindings --completion --no-update-rc
 
-link: .vim .vimrc .gvimrc .ideavimrc .ackrc .gitconfig .screenrc .ctags .gitignore_global .hgrc .hgext .inputrc .tmux.conf .zshrc .bash_profile .oh-my-zsh
+link: .vim .vimrc .gvimrc .ideavimrc .ackrc .gitconfig .screenrc .ctags .gitignore_global .hgrc .hgext .inputrc .tmux.conf .zshrc .bash_profile .oh-my-zsh .irbrc
 	-$(foreach file, $^, ln -s $(CURDIR)/$(file) ~; )
 
 linkvscode:

@@ -89,4 +89,19 @@ if [ -d "$HOME/.rvm" ]; then
     PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 fi
 
+if [ -d "$HOME/.rbenv" ]; then
+    export PATH="$HOME/.rbenv/bin:$PATH"
+    eval "$(rbenv init -)"
+fi
+
+if [ -d "$HOME/npm" ]; then
+    export PATH="$HOME/npm/bin:$PATH"
+fi
+
+if [ -d "/Applications/Postgres.app/Contents/Versions/9.4/bin" ]; then
+    export PATH="/Applications/Postgres.app/Contents/Versions/9.4/bin:$PATH"
+fi
+
+export RACK_ENV=development
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

@@ -1,9 +1,10 @@
 // Place your settings in this file to overwrite the default settings
 {
-    "workbench.activityBar.visible": false,
     "editor.tabSize": 2,
     "files.trimTrailingWhitespace": true,
-    "editor.formatOnType": true,
+    "editor.formatOnType": false,
+    "editor.minimap.enabled": false,
+    "editor.autoClosingBrackets": false,
     "files.autoSave": "onFocusChange",
     "files.exclude": {
         "node_modules": true,
@@ -97,7 +98,9 @@
         }
     ],
     "vim.disableAnnoyingNeovimMessage": true,
-    "typescript.check.tscVersion": false,
     "workbench.statusBar.visible": true,
-    "workbench.activityBar.visible": false
+    "workbench.activityBar.visible": false,
+    "workbench.colorTheme": "Darktooth",
+    "window.zoomLevel": 0,
+    "C_Cpp.intelliSenseEngine": "Default"
 }
