@@ -20,7 +20,8 @@
 [alias]
   co = checkout
   ci = commit
-  lg = log --graph --pretty=format:'%Cred%h%Creset %Creset%Cblue%an%Creset %s %Cgreen(%cr)%Cred%d%Creset' --abbrev-commit --date=relative
+  lg = log --graph --pretty=format:'%Cred%h%Creset %Creset%Cblue%an%Creset %s %Cgreen(%cr)%Cred%d%Creset' --abbrev-commit
+  datelg = log --graph --pretty=format:'%Cred%h%Creset %Creset%Cblue%an%Creset %s %Cgreen(%ci)%Cred%d%Creset' --abbrev-commit
   lga = "!git lg --all"
   amend = commit --amend
   gg = grep -A5 -B5 --color -n
