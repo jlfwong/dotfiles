@@ -5,6 +5,10 @@
     "editor.formatOnType": false,
     "editor.minimap.enabled": false,
     "editor.autoClosingBrackets": false,
+    "editor.minimap.enabled": false,
+    "editor.autoClosingBrackets": false,
+    "editor.formatOnSave": true,
+    "editor.autoIndent": false,
     "files.autoSave": "onFocusChange",
     "files.exclude": {
         "node_modules": true,
