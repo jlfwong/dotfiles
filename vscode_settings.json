@@ -84,7 +84,8 @@
             "after": [],
             "commands": [
                 {
-                    "command": "workbench.action.toggleSidebarVisibility"
+                    "command": "workbench.action.toggleSidebarVisibility",
+                    "args": []
                 }
             ]
         },
@@ -101,10 +102,25 @@
             "after": [":"]
         }
     ],
-    "vim.disableAnnoyingNeovimMessage": true,
     "workbench.statusBar.visible": true,
     "workbench.activityBar.visible": false,
     "workbench.colorTheme": "Darktooth",
     "window.zoomLevel": 0,
-    "C_Cpp.intelliSenseEngine": "Default"
+    "C_Cpp.intelliSenseEngine": "Default",
+    "C_Cpp.intelliSenseEngineFallback": "Disabled",
+    "workbench.startupEditor": "newUntitledFile",
+    "gitlens.codeLens.enabled": false,
+    "gitlens.currentLine.enabled": false,
+    "gitlens.hovers.currentLine.over": "line",
+    "gitlens.keymap": "none",
+    "gitlens.advanced.messages": {
+        "suppressCommitHasNoPreviousCommitWarning": false,
+        "suppressCommitNotFoundWarning": false,
+        "suppressFileNotUnderSourceControlWarning": false,
+        "suppressGitVersionWarning": false,
+        "suppressLineUncommittedWarning": false,
+        "suppressNoRepositoryWarning": false,
+        "suppressResultsExplorerNotice": false,
+        "suppressShowKeyBindingsNotice": true
+    }
 }
