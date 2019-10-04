@@ -1,126 +1,228 @@
 // Place your settings in this file to overwrite the default settings
 {
-    "editor.tabSize": 2,
-    "files.trimTrailingWhitespace": true,
-    "editor.formatOnType": false,
-    "editor.minimap.enabled": false,
-    "editor.autoClosingBrackets": false,
-    "editor.minimap.enabled": false,
-    "editor.autoClosingBrackets": false,
-    "editor.formatOnSave": true,
-    "editor.autoIndent": false,
-    "files.autoSave": "onFocusChange",
-    "files.exclude": {
-        "node_modules": true,
-        "**/.DS_Store": true
+  "editor.tabSize": 2,
+  "editor.formatOnType": false,
+  "editor.formatOnSave": false,
+  "emmet.showExpandedAbbreviation": "never",
+  "editor.acceptSuggestionOnCommitCharacter": false,
+  "editor.autoIndent": false,
+  "editor.minimap.enabled": false,
+  "files.autoSave": "onFocusChange",
+  "files.exclude": {
+    "node_modules": true,
+    "**/.DS_Store": true
+  },
+  "css.validate": false,
+  "workbench.editor.showTabs": false,
+  "vim.useSystemClipboard": true,
+  "vim.useCtrlKeys": true,
+  "vim.leader": ",",
+  "vim.visualstar": true,
+  "vim.handleKeys": {
+    "ctrl+h": false
+  },
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["leader", "h"],
+      "after": [],
+      "commands": ":set hlsearch"
     },
-    "css.validate": false,
-    "workbench.editor.showTabs": false,
-    "vim.useSystemClipboard": true,
-    "vim.useCtrlKeys": true,
-    "vim.leader": ",",
-    "vim.visualstar": true,
-    "vim.handleKeys": {
-        "ctrl+h": false
-    },
-    "vim.otherModesKeyBindingsNonRecursive": [
+    {
+      "before": ["leader", "f"],
+      "after": [],
+      "commands": [
         {
-            "before": ["leader", "h"],
-            "after": [],
-            "commands": ":set hlsearch"
-        },
-        {
-            "before": ["leader", "f"],
-            "after": [],
-            "commands": [
-                {
-                    "command": "workbench.action.quickOpen",
-                    "args": []
-                }
-            ]
-        },
-        {
-            "before": ["leader", "t"],
-            "after": [],
-            "commands": [
-                {
-                    "command": "workbench.action.gotoSymbol",
-                    "args": []
-                }
-            ]
-        },
-        {
-            "before": ["leader", "g", "g"],
-            "after": [],
-            "commands": [
-                {
-                    "command": "workbench.view.search",
-                    "args": []
-                }
-            ]
-        },
-        {
-            "before": ["<tab>"],
-            "after": [],
-            "commands": [
-                {
-                    "command": "workbench.action.navigateEditorGroups",
-                    "args": []
-                }
-            ]
-        },
-        {
-            "before": ["shift+tab"],
-            "after": [],
-            "commands": [
-                {
-                    "command": "workbench.action.navigateLeft",
-                    "args": []
-                }
-            ]
-        },
-        {
-            "before": ["leader", "n"],
-            "after": [],
-            "commands": [
-                {
-                    "command": "workbench.action.toggleSidebarVisibility",
-                    "args": []
-                }
-            ]
-        },
-        {
-            "before": ["H"],
-            "after": ["^"]
-        },
-        {
-            "before": ["L"],
-            "after": ["g", "_"]
-        },
-        {
-            "before": [";"],
-            "after": [":"]
+          "command": "workbench.action.quickOpen",
+          "args": []
         }
-    ],
-    "workbench.statusBar.visible": true,
-    "workbench.activityBar.visible": false,
-    "workbench.colorTheme": "Darktooth",
-    "window.zoomLevel": 0,
-    "C_Cpp.intelliSenseEngine": "Default",
-    "C_Cpp.intelliSenseEngineFallback": "Disabled",
-    "workbench.startupEditor": "newUntitledFile",
-    "gitlens.codeLens.enabled": false,
-    "gitlens.currentLine.enabled": false,
-    "gitlens.hovers.currentLine.over": "line",
-    "gitlens.keymap": "none",
-    "gitlens.advanced.messages": {
-        "suppressCommitHasNoPreviousCommitWarning": false,
-        "suppressCommitNotFoundWarning": false,
-        "suppressFileNotUnderSourceControlWarning": false,
-        "suppressGitVersionWarning": false,
-        "suppressLineUncommittedWarning": false,
-        "suppressNoRepositoryWarning": false,
-        "suppressResultsExplorerNotice": false,
-        "suppressShowKeyBindingsNotice": true
+      ]
+    },
+    {
+      "before": ["leader", "t"],
+      "after": [],
+      "commands": [
+        {
+          "command": "workbench.action.gotoSymbol",
+          "args": []
+        }
+      ]
+    },
+    {
+      "before": ["leader", "g", "g"],
+      "after": [],
+      "commands": [
+        {
+          "command": "workbench.view.search",
+          "args": []
+        }
+      ]
+    },
+    {
+      "before": ["<tab>"],
+      "after": [],
+      "commands": [
+        {
+          "command": "workbench.action.navigateEditorGroups",
+          "args": []
+        }
+      ]
+    },
+    {
+      "before": ["shift+tab"],
+      "after": [],
+      "commands": [
+        {
+          "command": "workbench.action.navigateLeft",
+          "args": []
+        }
+      ]
+    },
+    {
+      "before": ["leader", "n"],
+      "after": [],
+      "commands": [
+        {
+          "command": "workbench.action.toggleSidebarVisibility",
+          "args": []
+        }
+      ]
+    },
+    {
+      "before": ["H"],
+      "after": ["^"]
+    },
+    {
+      "before": ["L"],
+      "after": ["g", "_"]
+    },
+    {
+      "before": [";"],
+      "after": [":"]
+    },
+    {
+      "before": ["[", "q"],
+      "after": [],
+      "commands": [
+        {
+          "command": "search.action.focusPreviousSearchResult",
+          "args": []
+        }
+      ]
+    },
+    {
+      "before": ["]", "q"],
+      "after": [],
+      "commands": [
+        {
+          "command": "search.action.focusNextSearchResult",
+          "args": []
+        }
+      ]
     }
+  ],
+  "workbench.statusBar.visible": true,
+  "workbench.activityBar.visible": false,
+  "workbench.colorTheme": "Darktooth",
+  "window.zoomLevel": 0,
+  "C_Cpp.intelliSenseEngine": "Default",
+  "C_Cpp.intelliSenseEngineFallback": "Disabled",
+  "C_Cpp.clang_format_path": "/Users/jlfwong/figma/figma/build-tools/clang-format/clang-format",
+  "workbench.startupEditor": "newUntitledFile",
+  "gitlens.codeLens.enabled": false,
+  "gitlens.currentLine.enabled": false,
+  "gitlens.hovers.currentLine.over": "line",
+  "gitlens.keymap": "none",
+  "gitlens.advanced.messages": {
+    "suppressCommitHasNoPreviousCommitWarning": false,
+    "suppressCommitNotFoundWarning": false,
+    "suppressFileNotUnderSourceControlWarning": false,
+    "suppressGitVersionWarning": false,
+    "suppressLineUncommittedWarning": false,
+    "suppressNoRepositoryWarning": false,
+    "suppressResultsExplorerNotice": false,
+    "suppressShowKeyBindingsNotice": true
+  },
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "breadcrumbs.enabled": true,
+  "files.trimTrailingWhitespace": true,
+  "window.nativeFullScreen": false,
+  "gitlens.views.fileHistory.enabled": true,
+  "gitlens.views.lineHistory.enabled": true,
+  "editor.autoClosingQuotes": "never",
+  "editor.autoClosingBrackets": "never",
+  "cSpell.enabledLanguageIds": [
+    "asciidoc",
+    "c",
+    "cpp",
+    "csharp",
+    "css",
+    "go",
+    "handlebars",
+    "html",
+    "jade",
+    "javascript",
+    "javascriptreact",
+    "json",
+    "latex",
+    "less",
+    "markdown",
+    "php",
+    "plaintext",
+    "python",
+    "pub",
+    "restructuredtext",
+    "rust",
+    "scss",
+    "text",
+    "skew",
+    "typescript",
+    "typescriptreact",
+    "yml"
+  ],
+  "cSpell.userWords": [
+    "Affine",
+    "Blit",
+    "CORS",
+    "Debounced",
+    "Figma",
+    "GLSL",
+    "GUID",
+    "Prerasterization",
+    "Prerendering",
+    "Proto",
+    "RASTERIZED",
+    "RGBA",
+    "Realtime",
+    "SSAA",
+    "SUPERSAMPLE",
+    "TLFs",
+    "URL's",
+    "Uint",
+    "VRAM",
+    "backbuffer",
+    "blitting",
+    "cacheable",
+    "cachebreaker",
+    "downsample",
+    "downsampling",
+    "hotspot",
+    "hotspots",
+    "interruptible",
+    "jlfwong",
+    "memoized",
+    "prepend",
+    "prerasterize",
+    "prerender",
+    "protorendermanager",
+    "rasterization",
+    "rasterize",
+    "rasterizing",
+    "rect",
+    "rendermanager",
+    "somedevcluster",
+    "subtrees",
+    "unintuitive",
+    "upsampling"
+  ],
+  "java.errors.incompleteClasspath.severity": "ignore"
 }
