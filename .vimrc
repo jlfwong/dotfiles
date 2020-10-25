@@ -38,20 +38,6 @@ Bundle 'gmarik/vundle'
 " Bundles (plugins)
 Bundle 'Lokaltog/vim-powerline'
 
-if v:version < 703 || v:version == 703 && !has('patch584')
-  Bundle 'tsaleh/vim-supertab'
-else
-  let g:ycm_confirm_extra_conf = 0
-  Bundle 'Valloric/YouCompleteMe'
-
-  "YCM specific bindings
-  nnoremap <C-G><C-G> :YcmCompleter GoTo<CR>
-  nnoremap <C-G>g :YcmCompleter GoTo<CR>
-  nnoremap <C-G>d :YcmCompleter GoToDeclaration<CR>
-  nnoremap <C-G>f :YcmCompleter GoToDefinition<CR>
-  nnoremap <C-G>t :YcmCompleter GetType<CR>
-endif
-
 Bundle 'airblade/vim-gitgutter'
 Bundle 'majutsushi/tagbar'
 Bundle 'python_match.vim'
