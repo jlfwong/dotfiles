@@ -1,0 +1,28 @@
+#!/bin/sh
+
+# Get list of branches with deleted upstreams
+git remote prune origin
+
+# Exit if no branches to clean
+if ! git branch -vv | grep -q ': gone'; then
+    echo "No branches with deleted upstreams found"
+    exit 0
+fi
+
+# Process each branch
+for branch in $(git branch -vv | grep ': gone' | awk '{print $1}'); do
+    printf "Delete local branch '$branch'? (y/N/q to quit) "
+    read -n 1 confirm
+    echo # Add newline after character input
+    case "$confirm" in
+        [yY])
+            if git branch -D "$branch"; then
+                echo "✓ Deleted branch '$branch'"
+            else
+                echo "! Failed to delete branch '$branch'"
+            fi
+            ;;
+        [qQ]) echo "Quit."; exit 0 ;;
+        *) echo "Skipped branch '$branch'" ;;
+    esac
+done

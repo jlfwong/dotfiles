@@ -39,6 +39,7 @@
   outgoing = log origin/master..HEAD
   incoming = "!git fetch $1; git log HEAD..$1/master"
   su = submodule update --init --recursive
+  clean-branches = "!git-clean-branches"
 
 [core]
   editor = /usr/bin/vim

@@ -3,12 +3,12 @@ SHELL := /bin/bash
 all: submodules link bundleinstall brewinstall fzfinstall macos
 
 brewinstall:
-	brew install tmux zsh fzf ripgrep hub reattach-to-user-namespace
+	brew install tmux zsh fzf ripgrep gh reattach-to-user-namespace
 
 fzfinstall:
 	/usr/local/opt/fzf/install --key-bindings --completion --no-update-rc
 
-link: .vim .vimrc .gvimrc .ideavimrc .ackrc .gitconfig .screenrc .ctags .gitignore_global .hgrc .hgext .inputrc .tmux.conf .zshrc .bash_profile .oh-my-zsh .irbrc
+link: .vim .vimrc .gvimrc .ideavimrc .ackrc .gitconfig .screenrc .ctags .gitignore_global .hgrc .hgext .inputrc .tmux.conf .zshrc .bash_profile .oh-my-zsh .irbrc bin/git-list-branches-deleted-upstream bin/git-delete-local-merged
 	-$(foreach file, $^, ln -s $(CURDIR)/$(file) ~; )
 
 linkvscode:
@@ -25,7 +25,7 @@ submodules:
 
 # NOTE: This is intentionally not included as part of all:
 casks:
-	brew cask install spotify dropbox karabiner iterm2 google-chrome
+	brew cask install spotify dropbox karabiner-elements iterm2 google-chrome skype arq squirrel rectangle
 
 macos:
 	./macos.sh
